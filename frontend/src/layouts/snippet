@@ -1,0 +1,9 @@
+type Props = {
+
+}
+
+const layout = ({}: Porps) => {
+
+}
+
+export default layout;

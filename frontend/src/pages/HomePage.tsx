@@ -1,6 +1,7 @@
 import ui1 from "../assets/ui1.png";
 import ui2 from "../assets/ui2.png";
 import ui3 from "../assets/ui3.png";
+import ui4 from "../assets/ui4.png";
 import appDownloadImage from "../assets/appDownload.png";
 import "./HomePage.css";
 
@@ -17,11 +18,12 @@ const HomePage = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-5">
                 <div className="flex">
-                    <img src={ui1} className="ui1-image" alt="ui1" style={{width: "60%", height: "45%"}} />
+                    <img src={ui4} className="ui4-image" alt="ui1"/>
+                    {/* <img src={ui1} className="ui1-image" alt="ui1" style={{width: "60%", height: "45%"}} />
                     <img src={ui2} className="ui2-image" alt="ui2" style={{marginTop: "5vh", marginLeft: "-3vh", width: "60%", height: "43%"}} />
-                    <img src={ui3} className="hidden sm:block" alt="ui3" style={{marginTop: "7vh", marginLeft: "-2.5vh", width: "60%", height: "45%"}} />
+                    <img src={ui3} className="hidden sm:block" alt="ui3" style={{marginTop: "7vh", marginLeft: "-2.5vh", width: "60%", height: "45%"}} /> */}
                 </div>
-                <div className="flex flex-col items-center justify-center gap-4 text-center downloadmsg" style={{marginTop: "-25vh"}}>
+                <div className="flex flex-col items-center justify-center gap-4 text-center downloadmsg">
                     <span className="font-bold text-3xl tracking-tighter">
                         Share food and move towards sustainability!
                     </span>

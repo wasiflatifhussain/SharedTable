@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import LoadingButton from "@/components/LoadingButton";
+import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
     email: z.string().optional(),
@@ -26,7 +28,7 @@ const UserProfileForm = ({onSave, isLoading}: Props) => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-[#d1feec] rounded-lg md:p-10">
+            <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-[#f4fbdc] rounded-lg md:p-10">
                 <div>
                     <h2 className="text-2xl font-bold">
                         User Profile Form
@@ -55,45 +57,53 @@ const UserProfileForm = ({onSave, isLoading}: Props) => {
                             <FormControl>
                                 <Input {...field} className="bg-white" />
                             </FormControl>
+                            <FormMessage /> 
                         </FormItem>
                 )} />
 
 
                 <div className="flex flex-col md:flex-row gap-4">
-                    <FormField control={form.control} name="addressline1" 
+                    <FormField control={form.control} name="addressLine1" 
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem className="flex-1">
                                 <FormLabel>
                                     Address Line
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} className="bg-white" />
                                 </FormControl>
+                                <FormMessage /> 
                             </FormItem>
                     )} />
                     <FormField control={form.control} name="city" 
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem className="flex-1">
                                 <FormLabel>
                                     City
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} className="bg-white" />
                                 </FormControl>
+                                <FormMessage /> 
                             </FormItem>
                     )} />
                     <FormField control={form.control} name="country" 
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem className="flex-1">
                                 <FormLabel>
                                     Country
                                 </FormLabel>
                                 <FormControl>
                                     <Input {...field} className="bg-white" />
                                 </FormControl>
+                                <FormMessage /> 
                             </FormItem>
                     )} />
                 </div>
+                {isLoading ?
+                <LoadingButton /> 
+                : 
+                <Button type="submit" className="bg-[#048a52]">Submit</Button>}
 
             </form>
         </Form>

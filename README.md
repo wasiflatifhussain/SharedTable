@@ -7,4 +7,6 @@
 4. Cloudinary for image storage for restaurant owners
 5. Toasts to display user toasts
 6. Divide code sections into different components for ease of scalability
-7. 
+7. Deployable to Render.com
+8. Use of ShadCN Library for components and consistent UI
+9. Use of ZOD for Type-Script Frontend Schema Frameworks

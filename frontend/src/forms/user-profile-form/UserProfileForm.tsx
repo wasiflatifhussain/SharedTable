@@ -36,7 +36,7 @@ const UserProfileForm = ({onSave, isLoading, currentUser}: Props) => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-[#f4fbdc] rounded-lg md:p-10">
+            <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-[#f4fbdc] rounded-lg md:p-10 border-2 border-[#607523] text-[#607523]">
                 <div>
                     <h2 className="text-2xl font-bold">
                         User Profile Form

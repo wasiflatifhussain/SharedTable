@@ -5,6 +5,9 @@ import AuthCallbackPage from "./pages/AuthCallbackPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage";
+import background from "../src/assets/hero15.png";
+import background2 from "../src/assets/hero20.png";
+import background3 from "../src/assets/hero21.png";
 
 const AppRoutes = () => {
     return (
@@ -12,8 +15,8 @@ const AppRoutes = () => {
             <Route path="/" element={<Layout showHero><HomePage /></Layout>}/>
             <Route path="/auth-callback" element={<AuthCallbackPage />} />
             <Route element={<ProtectedRoute />}>
-                <Route path="/user-profile" element={<Layout><UserProfilePage /></Layout>}/>
-                <Route path="/manage-restaurant" element={<Layout><ManageRestaurantPage /></Layout>}/>
+                <Route path="/user-profile" element={<Layout bgImage={background3}><UserProfilePage /></Layout>}/>
+                <Route path="/manage-restaurant" element={<Layout bgImage={background}><ManageRestaurantPage /></Layout>}/>
             </Route>
             <Route path="*" element={<Navigate to="/" />}/>
         </Routes>

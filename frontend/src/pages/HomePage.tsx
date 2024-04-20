@@ -1,6 +1,3 @@
-import ui1 from "../assets/ui1.png";
-import ui2 from "../assets/ui2.png";
-import ui3 from "../assets/ui3.png";
 import ui4 from "../assets/ui4.png";
 import appDownloadImage from "../assets/appDownload.png";
 import "./HomePage.css";

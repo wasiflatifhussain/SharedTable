@@ -1,5 +1,3 @@
-import hero8 from "../assets/hero13.jpeg";
-import hero9 from "../assets/hero14.jpeg";
 import hero10 from "../assets/hero16.jpeg";
 
 const Hero = () => {

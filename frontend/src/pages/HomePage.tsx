@@ -4,17 +4,28 @@ import ui3 from "../assets/ui3.png";
 import ui4 from "../assets/ui4.png";
 import appDownloadImage from "../assets/appDownload.png";
 import "./HomePage.css";
+import SearchBar, { SearchForm } from "@/components/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+    const navigate = useNavigate();
+
+    const handleSearchSubmit = (searchFormValues: SearchForm) => {
+        navigate({
+            pathname: `/search/${searchFormValues.searchQuery}`,
+        });
+    };
+
     return (
         <div className="flex flex-col gap-12">
-            <div className="bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
+            <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
                 <h1 className="text-4xl font-bold tracking-tight text-[#709503]">
                     Find a restaurant serving leftovers right away
                 </h1>
                 <span className="text-xl">
                     Look for your favourite restaurants and cuisines  with a single click!
                 </span>
+                <SearchBar placeHolder="Search by City or Town" onSubmit={handleSearchSubmit} />
             </div>
             <div className="grid md:grid-cols-2 gap-5">
                 <div className="flex">

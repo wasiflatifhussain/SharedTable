@@ -10,3 +10,5 @@
 7. Deployable to Render.com
 8. Use of ShadCN Library for components and consistent UI
 9. Use of ZOD for Type-Script Frontend Schema Frameworks
+10. Using Stripe to handle payments
+11. Using Stripe CLI for real-time delivery details information via web-hooks.

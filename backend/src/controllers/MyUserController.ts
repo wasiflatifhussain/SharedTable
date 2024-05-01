@@ -18,6 +18,7 @@ const createCurrentUser = async (req: Request, res: Response) => {
     // 1. check if user exists
     // 2. create user if not exists
     // 3. return the user object to calling client
+    console.log("createCurrentUser called in backend/src/controllers/MyUserController.ts");
     try {
         const {auth0Id} = req.body;
         const existingUser = await User.findOne({ auth0Id });
@@ -27,6 +28,7 @@ const createCurrentUser = async (req: Request, res: Response) => {
         }
         else {
             const newUser = new User(req.body);
+            console.log(newUser);
             await newUser.save();
 
             res.status(201).json(newUser.toObject()); //201 means successfully created

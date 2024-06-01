@@ -33,6 +33,7 @@ export const useGetMyOrders = () => {
     return {orders, isLoading};
 };
 
+
 type CheckoutSessionRequest = {
     cartItems: {
         menuItemId: string;
@@ -43,7 +44,7 @@ type CheckoutSessionRequest = {
         email: string;
         name: string;
         addressLine1: string;
-        city: string;
+        area: string;
     };
     restaurantId: string;
 };

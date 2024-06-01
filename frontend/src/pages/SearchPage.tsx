@@ -16,7 +16,7 @@ export type SearchState = {
 }
 
 const SearchPage = () => {
-    const { city } = useParams();
+    const { area } = useParams();
     const [searchState,  setSearchState] = useState<SearchState>({
         searchQuery: "",
         page: 1,
@@ -26,7 +26,7 @@ const SearchPage = () => {
 
     const [ isExpanded, setIsExpanded ] = useState<boolean>(false);
 
-    const { results, isLoading } = useSearchRestaurants(searchState, city);
+    const { results, isLoading } = useSearchRestaurants(searchState, area);
 
     const setSortOption = (sortOption: string) => {
         setSearchState((prevState) => ({
@@ -40,7 +40,7 @@ const SearchPage = () => {
         <span>Loading ...</span>
     }
 
-    if (!results?.data || !city) {
+    if (!results?.data || !area) {
         return <span>No results found</span>;
     }
 
@@ -93,7 +93,7 @@ const SearchPage = () => {
                         onReset={resetSearch}
                         />
                     <div className="flex justify-between flex-col gap-3 lg:flex-row">
-                        <SearchResultInfo total={results.pagination.total} city={city} />
+                        <SearchResultInfo total={results.pagination.total} area={area} />
                         <SortOptionDropdown sortOption={searchState.sortOption} onChange={(value) => setSortOption(value)} />    
                     </div>
                     {results.data.map((restaurant) => (

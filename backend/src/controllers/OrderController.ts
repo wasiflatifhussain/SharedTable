@@ -31,7 +31,7 @@ type CheckoutSessionRequest = {
         email: string;
         name: string;
         addressLine1: string;
-        city: string;
+        area: string;
     };
     restaurantId: string;
 };
@@ -121,7 +121,7 @@ const createLineItems = (checkoutSessionRequest: CheckoutSessionRequest, menuIte
         const line_item: Stripe.Checkout.SessionCreateParams.LineItem = {
             price_data: {
                 currency: "hkd",
-                unit_amount: menuItem.price,
+                unit_amount: menuItem.price * 100,
                 product_data: {
                     name: menuItem.name,
                 },
@@ -146,7 +146,7 @@ const createSession = async (
                     display_name: "Delivery",
                     type: "fixed_amount",
                     fixed_amount: {
-                        amount: deliveryPrice,
+                        amount: deliveryPrice * 100,
                         currency: "hkd",
                     },
                 },

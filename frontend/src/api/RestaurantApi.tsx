@@ -27,7 +27,7 @@ export const useGetRestaurant = (restaurantId?: string) => {
     return { restaurant, isLoading };
 };
 
-export const useSearchRestaurants = (searchState: SearchState, city?: string) => {
+export const useSearchRestaurants = (searchState: SearchState, area?: string) => {
     const createSearchRequest = async (): Promise<RestaurantSearchResponse> => {
         const params = new URLSearchParams();
         params.set("searchQuery", searchState.searchQuery);
@@ -35,7 +35,7 @@ export const useSearchRestaurants = (searchState: SearchState, city?: string) =>
         params.set("selectedCuisines", searchState.selectedCuisines.join(","))
         params.set("sortOption", searchState.sortOption);
 
-        const response = await fetch (`${API_BASE_URL}/api/restaurant/search/${city}?${params.toString()}`);
+        const response = await fetch (`${API_BASE_URL}/api/restaurant/search/${area}?${params.toString()}`);
 
         if (!response.ok) {
             throw new Error("Failed to get restaurant");
@@ -48,7 +48,7 @@ export const useSearchRestaurants = (searchState: SearchState, city?: string) =>
     = useQuery(
         ["searchRestaurants", searchState],
         createSearchRequest,
-        { enabled: !!city }
+        { enabled: !!area }
     );
 
     return {

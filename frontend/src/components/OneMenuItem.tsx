@@ -15,7 +15,7 @@ const OneMenuItem = ({ menuItem, addToCart }: Props) => {
                 </CardTitle>
             </CardHeader>
             <CardContent className="font-bold">
-                ${(menuItem.price / 100).toFixed(2)}
+                HKD {(menuItem.price).toFixed(2)}
             </CardContent>
         </Card>
     )

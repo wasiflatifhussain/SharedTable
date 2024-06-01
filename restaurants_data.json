@@ -1,0 +1,1392 @@
+[
+  {
+    "user": "User1",
+    "restaurantName": "East Meets West BBQ",
+    "area": "Sai Yin Pun",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 32,
+    "cuisines": [
+      "Indian",
+      "American",
+      "Tacos",
+      "BBQ"
+    ],
+    "menuItems": [
+      {
+        "name": "Daily Special Tandoori Chicken Taco",
+        "price": 5,  
+        "_id": {
+          "$oid": "879d1aa0cb2bb18d49c9fe89"
+        }
+      },
+      {
+        "name": "Chef's Choice Pulled Pork Sandwich",
+        "price": 5,
+        "_id": {
+          "$oid": "1fbfd7a6d60f277cd446b3ee"
+        }
+      },
+      {
+        "name": "Daily Dish Smoked Brisket",
+        "price": 0,
+        "_id": {
+          "$oid": "f2edf1ff6bcad0fcf0ba60b6"
+        }
+      },
+      {
+        "name": "Featured Paneer Tikka Skewers",
+        "price": 5,
+        "_id": {
+          "$oid": "49fb3fcbea0cdedbe252b2bf"
+        }
+      },
+      {
+        "name": "End of Day BBQ Nachos",
+        "price": 5,
+        "_id": {
+          "$oid": "cffecdfa4cad4b7ea5ecee24"
+        }
+      }
+    ],
+    "imageUrl": "https://media.timeout.com/images/105785629/750/562/image.jpg",
+    "lastUpdated": "2024-02-01T18:03:56.681036"
+  },
+  {
+    "user": "User2",
+    "restaurantName": "Mediterranean Delicacies",
+    "area": "Sai Yin Pun",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 21,
+    "cuisines": [
+      "Tapas",
+      "Greek",
+      "American",
+      "Breakfast"
+    ],
+    "menuItems": [
+      {
+        "name": "Patatas Bravas Portion",
+        "price": 2, 
+        "_id": {
+          "$oid": "4295fee37d3d3ca58947ad70"
+        }
+      },
+      {
+        "name": "Greek Salad Cup",
+        "price": 2,
+        "_id": {
+          "$oid": "76df56310a6bc83b5aac72cd"
+        }
+      },
+      {
+        "name": "Mini Pancake Trio",
+        "price": 4,
+        "_id": {
+          "$oid": "acb355acb08187ca9cb4854f"
+        }
+      },
+      {
+        "name": "Bacon and Egg Slider",
+        "price": 2,
+        "_id": {
+          "$oid": "efb5e1ec036eb78ffb34fb3a"
+        }
+      },
+      {
+        "name": "Single Avocado Toast",
+        "price": 2,
+        "_id": {
+          "$oid": "d7faa15791ffc37bfbafafbd"
+        }
+      }
+    ],
+    "imageUrl": "https://domesticfits.com/wp-content/uploads/2023/12/mediterranean-food-scaled.jpeg",
+    "lastUpdated": "2024-02-01T18:03:56.681073"
+  },
+  {
+    "user": "User3",
+    "restaurantName": "World Cuisine Fusion",
+    "area": "Sai Yin Pun",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 23,
+    "cuisines": [
+      "Japanese",
+      "French",
+      "Chinese",
+      "Spanish"
+    ],
+    "menuItems": [
+      {
+        "name": "Miso Soup with Tofu",
+        "price": 2,
+        "_id": {
+          "$oid": "124f6faefafbfa2eb2ce7315"
+        }
+      },
+      {
+        "name": "French Macaron",
+        "price": 1,
+        "_id": {
+          "$oid": "0d5cd8aaeddd918cfee1e843"
+        }
+      },
+      {
+        "name": "Shumai Dumpling",
+        "price": 3,
+        "_id": {
+          "$oid": "b7419ff9fb4fde14be72ecc7"
+        }
+      },
+      {
+        "name": "Tapas Croquette",
+        "price": 4,
+        "_id": {
+          "$oid": "cbadc509aeffe531acecaaa0"
+        }
+      },
+      {
+        "name": "Single Serving of General Tso’s Chicken",
+        "price": 3,
+        "_id": {
+          "$oid": "df8c84b39c8d83f1fb35edcb"
+        }
+      }
+    ],
+    "imageUrl": "https://foodtalks.com.sg/wp-content/uploads/2023/06/Popular-Fusion-Buffet-Menus-A-Culinary-Delight-for-Foodies.jpg",
+    "lastUpdated": "2024-02-01T18:03:56.681100"
+  },
+  {
+    "user": "User4",
+    "restaurantName": "KTown Noodles & Grill",
+    "area": "Kennedy Town",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 26,
+    "cuisines": [
+      "Noodles",
+      "Cafe",
+      "Pasta",
+      "Steak"
+    ],
+    "menuItems": [
+      {
+        "name": "Beef Noodle Soup Small Bowl",
+        "price": 7, 
+        "_id": {
+          "$oid": "f4b6ee7ddafe5b9aeacd52de"
+        }
+      },
+      {
+        "name": "Mini Americano Coffee",
+        "price": 5,
+        "_id": {
+          "$oid": "e6a7d2943d3bc188f04d9bf7"
+        }
+      },
+      {
+        "name": "Pasta Pomodoro Small Plate",
+        "price": 4,
+        "_id": {
+          "$oid": "db68f5c3df3cbd2225baacec"
+        }
+      },
+      {
+        "name": "Grilled Chicken Salad",
+        "price": 3,
+        "_id": {
+          "$oid": "7535e8acc3267a6b45522106"
+        }
+      },
+      {
+        "name": "Garlic Bread Slice",
+        "price": 1,
+        "_id": {
+          "$oid": "656e7f5bcc039e5c7c23fb35"
+        }
+      }
+    ],
+    "imageUrl": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/howardcounty/Howard_County_20220816_LC_1979_9060ae72-59d4-446c-be3f-edadab5f2ea9.jpg",
+    "lastUpdated": "2024-02-01T18:03:56.681128"
+  },
+  {
+    "user": "User5",
+    "restaurantName": "Martha's Healthy Kitchen",
+    "area": "Kennedy Town",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 38,
+    "cuisines": [
+      "Cafe",
+      "Healthy",
+      "Chinese",
+      "Salads"
+    ],
+    "menuItems": [
+      {
+        "name": "Steamed Jasmine Rice Cup",
+        "price": 4,
+        "_id": {
+          "$oid": "ebcdefdb1eb6d7ef3f1e5133"
+        }
+      },
+      {
+        "name": "Apple Walnut Salad Small",
+        "price": 5,
+        "_id": {
+          "$oid": "bd37dbf940f5cdd8575c0937"
+        }
+      },
+      {
+        "name": "Spring Roll",
+        "price": 3,
+        "_id": {
+          "$oid": "6fdd8ae008feb0a8c898eca7"
+        }
+      },
+      {
+        "name": "Fresh Fruit Cup",
+        "price": 4,
+        "_id": {
+          "$oid": "f5d29a8e9b8a9c8f660de7dd"
+        }
+      },
+      {
+        "name": "Cucumber Salad",
+        "price": 3,
+        "_id": {
+          "$oid": "f29214e042de698df5ccffe7"
+        }
+      }
+    ],
+    "imageUrl": "https://www.cnet.com/a/img/resize/a67b15a127e711a1a39b7a731c3ce3c9881896c2/hub/2019/12/20/c812ba4e-61d4-429c-b2fc-777be2e263a8/roasted-halibut.jpg?auto=webp&fit=crop&height=675&width=1200",
+    "lastUpdated": "2024-02-01T18:03:56.681154"
+  },
+  {
+    "user": "User6",
+    "restaurantName": "Global Flavors Kitchen",
+    "area": "Kennedy Town",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 24,
+    "cuisines": [
+      "Pasta",
+      "Japanese",
+      "Mexican",
+      "Pizza"
+    ],
+    "menuItems": [
+      {
+        "name": "Margherita Pizza Slice",
+        "price": 5, 
+        "_id": {
+          "$oid": "d69b7d4138fbdc8afa7e34ae"
+        }
+      },
+      {
+        "name": "Sushi Handroll (Salmon)",
+        "price": 2,
+        "_id": {
+          "$oid": "fb7ff58aa722eeb078dbaeeb"
+        }
+      },
+      {
+        "name": "Chicken Taco",
+        "price": 3,
+        "_id": {
+          "$oid": "f3fe5afafbdfcbfe9f6bd955"
+        }
+      },
+      {
+        "name": "Spaghetti Aglio e Olio",
+        "price": 5,
+        "_id": {
+          "$oid": "09dcc40caf99daf2be94dead"
+        }
+      },
+      {
+        "name": "Mini Quesadilla",
+        "price": 2,
+        "_id": {
+          "$oid": "dadaa083b7b9dfd10c9beaab"
+        }
+      }
+    ],
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:1024/1*sUdnFJbE5Owu6hg0K8KKaw.jpeg",
+    "lastUpdated": "2024-02-01T18:03:56.681180"
+  },  
+  {
+    "user": "User7",
+    "restaurantName": "Fusion Bites",
+    "area": "Kennedy Town",
+    "country": "Hong Kong",
+    "deliveryPrice": 8, 
+    "estimatedDeliveryTime": 54,
+    "cuisines": [
+      "American",
+      "Cafe",
+      "Spanish",
+      "Indian"
+    ],
+    "menuItems": [
+      {
+        "name": "Mini Burger",
+        "price": 4, 
+        "_id": {
+          "$oid": "f10fdf0d0df2b0cbf33c3b14"
+        }
+      },
+      {
+        "name": "Chai Latte",
+        "price": 2,
+        "_id": {
+          "$oid": "c715bcbfefecb06bbd91b7da"
+        }
+      },
+      {
+        "name": "Patatas Bravas",
+        "price": 3,
+        "_id": {
+          "$oid": "792d91bae47ff9f9c3c16a1a"
+        }
+      },
+      {
+        "name": "Butter Naan",
+        "price": 2,
+        "_id": {
+          "$oid": "99f6cf432b81f7ffa415b3ba"
+        }
+      },
+      {
+        "name": "Mango Lassi",
+        "price": 2,
+        "_id": {
+          "$oid": "a42ba7082eedac86f531c3fb"
+        }
+      }
+    ],
+    "imageUrl": "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/1edbd0d5-2bbe-49ca-8756-c63530e6968e.jpg",
+    "lastUpdated": "2024-02-01T18:03:56.681205"
+  },
+  {
+    "user": "User1",
+    "restaurantName": "EcoBites",
+    "area": "Central",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 32,
+    "cuisines": [
+      "Organic",
+      "American",
+      "Tapas",
+      "Seafood"
+    ],
+    "menuItems": [
+      {
+        "name": "Mini Crab Cakes",
+        "price": 3, 
+        "_id": {
+          "$oid": "1accf7fd7f25993e9cfbcdf8"
+        }
+      },
+      {
+        "name": "Organic Tomato Bruschetta",
+        "price": 0,
+        "_id": {
+          "$oid": "ca167abff5bcbbef2b7fa6ce"
+        }
+      },
+      {
+        "name": "Grilled Shrimp Skewer",
+        "price": 0,
+        "_id": {
+          "$oid": "cdafdcef0ccd03a49f593ac4"
+        }
+      },
+      {
+        "name": "Salmon Taco",
+        "price": 2,
+        "_id": {
+          "$oid": "f4a911cfb567fe9704fbe3e2"
+        }
+      },
+      {
+        "name": "Clam Chowder Soup Cup",
+        "price": 2,
+        "_id": {
+          "$oid": "7f28bc08e5a5a188a2f0e81c"
+        }
+      }
+    ],
+    "imageUrl": "https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394351"
+  },
+  {
+    "user": "User2",
+    "restaurantName": "Central Cafe Delights",
+    "area": "Central",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 38,
+    "cuisines": [
+      "Cafe",
+      "Salads",
+      "Tacos",
+      "Desserts"
+    ],
+    "menuItems": [
+      {
+        "name": "Chocolate Chip Cookie",
+        "price": 0, 
+        "_id": {
+          "$oid": "2ddc843daeae8ad119a374ab"
+        }
+      },
+      {
+        "name": "Fresh Fruit Salad",
+        "price": 2,
+        "_id": {
+          "$oid": "92b67632cbfa4c58ec1ba089"
+        }
+      },
+      {
+        "name": "Pulled Pork Taco",
+        "price": 2,
+        "_id": {
+          "$oid": "b5fac15cca0029b93fe33c8b"
+        }
+      },
+      {
+        "name": "Mini Cheesecake",
+        "price": 2,
+        "_id": {
+          "$oid": "f0b92bf84fa529f44341f77b"
+        }
+      },
+      {
+        "name": "Caprese Salad Small",
+        "price": 3,
+        "_id": {
+          "$oid": "f02746aa60dbf7ea01ff5c3f"
+        }
+      }
+    ],
+    "imageUrl": "https://images.lifestyleasia.com/wp-content/uploads/sites/6/2023/03/19104922/neighbourhood-guide-best-restaurants-cafes-river-valley-singapore-thong-aik-cafe-coffee-brunch-tiong-bahru-cafe-foothills.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394389"
+  },
+  {
+    "user": "User3",
+    "restaurantName": "Hong Kong Global Eats",
+    "area": "Central",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 51,
+    "cuisines": [
+      "Tacos",
+      "Sushi",
+      "Spanish",
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Fish Taco",
+        "price": 2, 
+        "_id": {
+          "$oid": "cfb9fa5a381d38aa03cc3dc5"
+        }
+      },
+      {
+        "name": "Sushi Nigiri (Salmon)",
+        "price": 2,
+        "_id": {
+          "$oid": "c9fecb2be1d6eceb50e82e63"
+        }
+      },
+      {
+        "name": "Small Paella",
+        "price": 3,
+        "_id": {
+          "$oid": "82be87a3a5afa0ebfb4f1df6"
+        }
+      },
+      {
+        "name": "Dim Sum Trio",
+        "price": 1.5,
+        "_id": {
+          "$oid": "5c05c5f7dcb943c90cea9eb0"
+        }
+      },
+      {
+        "name": "Spring Roll (Veg)",
+        "price": 1,
+        "_id": {
+          "$oid": "366b83fb3f5ecb7e60dab1e8"
+        }
+      }
+    ],
+    "imageUrl": "https://sg1.gffoodservice.com.au/content/uploads/2021/03/article-hero-banner-asian_fusion-@1x.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394414"
+  }
+  ,
+  {
+    "user": "User4",
+    "restaurantName": "Canton Dim Sum",
+    "area": "Sheung Wan",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 51,
+    "cuisines": [
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Har Gow (Shrimp Dumplings)",
+        "price": 2,
+        "_id": {
+          "$oid": "cfb9fa5a381d38aa03cc3dc5"
+        }
+      },
+      {
+        "name": "Siu Mai (Pork Dumplings)",
+        "price": 2,
+        "_id": {
+          "$oid": "c9fecb2be1d6eceb50e82e63"
+        }
+      },
+      {
+        "name": "Char Siu Bao (BBQ Pork Bun)",
+        "price": 1.5,
+        "_id": {
+          "$oid": "82be87a3a5afa0ebfb4f1df6"
+        }
+      },
+      {
+        "name": "Spring Rolls (Vegetable)",
+        "price": 1,
+        "_id": {
+          "$oid": "5c05c5f7dcb943c90cea9eb0"
+        }
+      },
+      {
+        "name": "Fried Rice (Chicken)",
+        "price": 3,
+        "_id": {
+          "$oid": "366b83fb3f5ecb7e60dab1e8"
+        }
+      }
+    ],
+    "imageUrl": "https://s.dash.co/2019/06/14/030601/header2.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394414"
+  }
+  ,
+  {
+    "user": "User5",
+    "restaurantName": "Sheung Wan Organic Bistro",
+    "area": "Sheung Wan",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 19,
+    "cuisines": [
+      "Salads",
+      "Steak",
+      "Organic",
+      "Pasta"
+    ],
+    "menuItems": [
+      {
+        "name": "Grilled Steak Salad",
+        "price": 3,
+        "_id": {
+          "$oid": "d7d9e7a6e748c3fffee59e49"
+        }
+      },
+      {
+        "name": "Organic Tomato and Basil Pasta",
+        "price": 3,
+        "_id": {
+          "$oid": "b32ad6adadcc4a79ddbc8415"
+        }
+      },
+      {
+        "name": "Vegetable Stir Fry with Organic Tofu",
+        "price": 2,
+        "_id": {
+          "$oid": "7c7afceadae0fc6a42bdacdc"
+        }
+      },
+      {
+        "name": "Organic Quinoa and Avocado Bowl",
+        "price": 2,
+        "_id": {
+          "$oid": "cbaffc3032eaaa94113b57ff"
+        }
+      },
+      {
+        "name": "Beef Penne with Organic Tomato Sauce",
+        "price": 3,
+        "_id": {
+          "$oid": "fed81ea8a6955a9f8eccfd2e"
+        }
+      }
+    ],
+    "imageUrl": "https://food-images.files.bbci.co.uk/food/recipes/cobb_salad_62368_16x9.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394468"
+  }
+  ,
+  {
+    "user": "User6",
+    "restaurantName": "Hong Kong Fusion Delights",
+    "area": "Sheung Wan",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 56,
+    "cuisines": [
+      "Japanese",
+      "Breakfast",
+      "French",
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Mini Dim Sum Platter",
+        "price": 5,
+        "_id": {
+          "$oid": "b4069b4b6ab0efeb034c3e6c"
+        }
+      },
+      {
+        "name": "Soy Sauce Chicken Rice",
+        "price": 2,
+        "_id": {
+          "$oid": "2d3fa0ff84ad19531fe164ac"
+        }
+      },
+      {
+        "name": "Congee with Century Egg",
+        "price": 3,
+        "_id": {
+          "$oid": "b86ed10a98f7f55ca41dc8e1"
+        }
+      },
+      {
+        "name": "Sesame Noodle Bowl",
+        "price": 3,
+        "_id": {
+          "$oid": "6ab51730c92e8bd5be876463"
+        }
+      },
+      {
+        "name": "Egg Tart",
+        "price": 0,
+        "_id": {
+          "$oid": "f725c45d69dca56ab9cba17f"
+        }
+      }
+    ],
+    "imageUrl": "https://images-cdn.welcomesoftware.com/Zz0xMTk4ZmRjZjdkZjMxMWViODY3MDI3Y2FjMjMzZTM5Yg==/taco-pizza-the-little-kitchen-1.jpg?width=1366",
+    "lastUpdated": "2024-02-01T18:08:00.394495"
+  },
+  {
+    "user": "User5",
+    "restaurantName": "Wan Chai Siu Mei",
+    "area": "Wan Chai",
+    "country": "Hong Kong",
+    "deliveryPrice": 20, 
+    "estimatedDeliveryTime": 19,
+    "cuisines": [
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Roast Duck Rice Box",
+        "price": 5, 
+        "_id": {
+          "$oid": "d7d9e7a6e748c3fffee59e49"
+        }
+      },
+      {
+        "name": "Char Siu Bao (BBQ Pork Bun)",
+        "price": 1,
+        "_id": {
+          "$oid": "b32ad6adadcc4a79ddbc8415"
+        }
+      },
+      {
+        "name": "Honey Glazed Pork with Rice",
+        "price": 2,
+        "_id": {
+          "$oid": "7c7afceadae0fc6a42bdacdc"
+        }
+      },
+      {
+        "name": "Soy Sauce Chicken Legs",
+        "price": 2,
+        "_id": {
+          "$oid": "cbaffc3032eaaa94113b57ff"
+        }
+      },
+      {
+        "name": "Steamed Fish Fillet with Ginger",
+        "price": 0,
+        "_id": {
+          "$oid": "fed81ea8a6955a9f8eccfd2e"
+        }
+      }
+    ],
+    "imageUrl": "https://media.timeout.com/images/105827924/750/422/image.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394468"
+  },
+  {
+    "user": "User6",
+    "restaurantName": "Chef Liu Yeung's Dim Sum",
+    "area": "Wan Chai",
+    "country": "Hong Kong",
+    "deliveryPrice": 15, 
+    "estimatedDeliveryTime": 56,
+    "cuisines": [
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Shrimp Dumplings (Har Gow)",
+        "price": 2, 
+        "_id": {
+          "$oid": "b4069b4b6ab0efeb034c3e6c"
+        }
+      },
+      {
+        "name": "Pork Siu Mai",
+        "price": 2,
+        "_id": {
+          "$oid": "2d3fa0ff84ad19531fe164ac"
+        }
+      },
+      {
+        "name": "Cantonese Roast Duck Bao",
+        "price": 1,
+        "_id": {
+          "$oid": "b86ed10a98f7f55ca41dc8e1"
+        }
+      },
+      {
+        "name": "Beef Cheek Stew with Tofu",
+        "price": 0,
+        "_id": {
+          "$oid": "6ab51730c92e8bd5be876463"
+        }
+      },
+      {
+        "name": "Lotus Leaf Wrapped Sticky Rice",
+        "price": 1,
+        "_id": {
+          "$oid": "f725c45d69dca56ab9cba17f"
+        }
+      }
+    ],
+    "imageUrl": "https://www.thespruceeats.com/thmb/-jF_Jys-jg3Jp92wWEqb3NZvyvQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lotus-leaf-wraps-lo-mai-gai-694478-Hero_01-1a5c20912e964c09959042f4b16382dc.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394495"
+  },
+  {
+    "user": "User9",
+    "restaurantName": "Butik Batok Delights",
+    "area": "Admiralty",
+    "country": "Hong Kong",
+    "deliveryPrice": 10,
+    "estimatedDeliveryTime": 41,
+    "cuisines": [
+      "Singaporean"
+    ],
+    "menuItems": [
+      {
+        "name": "Hainanese Chicken Rice",
+        "price": 5,
+        "_id": {
+          "$oid": "ccfb8723da99fba913b1c31e"
+        }
+      },
+      {
+        "name": "Laksa",
+        "price": 3,
+        "_id": {
+          "$oid": "7ddaa2c5abb0e3a16ec019dd"
+        }
+      },
+      {
+        "name": "Char Kway Teow",
+        "price": 5,
+        "_id": {
+          "$oid": "7ccfe5fc8bcffbd989f3e0ed"
+        }
+      },
+      {
+        "name": "Roti Prata with Curry",
+        "price": 2,
+        "_id": {
+          "$oid": "9effac8dadbcac65480cdaa9"
+        }
+      },
+      {
+        "name": "Satay (Chicken, 3 skewers)",
+        "price": 1,
+        "_id": {
+          "$oid": "6c1dd9785dc7f6ffd93fddaa"
+        }
+      }
+    ],
+    "imageUrl": "https://a.cdn-hotels.com/gdcs/production36/d604/eb41d504-4a34-40a8-b4cb-8a5900486d26.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394579"
+  },
+  {
+    "user": "User10",
+    "restaurantName": "Gujrati Indian Tadka",
+    "area": "Admiralty",
+    "country": "Hong Kong",
+    "deliveryPrice": 5, 
+    "estimatedDeliveryTime": 58,
+    "cuisines": [
+      "Indian"
+    ],
+    "menuItems": [
+      {
+        "name": "Butter Chicken",
+        "price": 3,
+        "_id": {
+          "$oid": "c7deedb3ff8097bd5b75acbf"
+        }
+      },
+      {
+        "name": "Paneer Tikka",
+        "price": 3,
+        "_id": {
+          "$oid": "a8decaf151eefb03b09d5bcd"
+        }
+      },
+      {
+        "name": "Lamb Vindaloo",
+        "price": 5,
+        "_id": {
+          "$oid": "4db0b482bc0b50b2a2f1e1e1"
+        }
+      },
+      {
+        "name": "Dal Makhani",
+        "price": 5,
+        "_id": {
+          "$oid": "7e13c8eb69cead12b66a5ad6"
+        }
+      },
+      {
+        "name": "Garlic Naan",
+        "price": 0,
+        "_id": {
+          "$oid": "7cf9fc478d5eb37fe649adbc"
+        }
+      }
+    ],
+    "imageUrl": "https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/intro-1645057933.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394606"
+  },
+  {
+    "user": "User11",
+    "restaurantName": "Malaya Spice Corner",
+    "area": "Admiralty",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 43,
+    "cuisines": [
+      "Malaysian"
+    ],
+    "menuItems": [
+      {
+        "name": "Nasi Lemak",
+        "price": 3, 
+        "_id": {
+          "$oid": "918ef26fee0f9df4443bfacc"
+        }
+      },
+      {
+        "name": "Mee Goreng Mamak",
+        "price": 2,
+        "_id": {
+          "$oid": "0c756deddc5e6eb1ddc51acd"
+        }
+      },
+      {
+        "name": "Roti Canai with Dhal Curry",
+        "price": 2,
+        "_id": {
+          "$oid": "b08ebd2fbd86bb48dee4ef27"
+        }
+      },
+      {
+        "name": "Chicken Satay with Peanut Sauce",
+        "price": 1,
+        "_id": {
+          "$oid": "8beb42cb58be9bfa735aa6bf"
+        }
+      },
+      {
+        "name": "Beef Rendang",
+        "price": 3,
+        "_id": {
+          "$oid": "d7cc55679ba8fceb7edd6a77"
+        }
+      }
+    ],
+    "imageUrl": "https://static.thehoneycombers.com/wp-content/uploads/sites/2/2022/02/malay-food-singapore-_-coba-coba-1-900x643.png",
+    "lastUpdated": "2024-02-01T18:08:00.394631"
+  },
+  {
+    "user": "User12",
+    "restaurantName": "Italiano Margaritto",
+    "area": "Hung Hom",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 36,
+    "cuisines": [
+      "Italian"
+    ],
+    "menuItems": [
+      {
+        "name": "Margherita Pizza",
+        "price": 3, 
+        "_id": {
+          "$oid": "abc6b1bfbb12cc7ad4e3ddd8"
+        }
+      },
+      {
+        "name": "Penne Arrabbiata",
+        "price": 3,
+        "_id": {
+          "$oid": "dfa93074a855e6f8cf01a6c5"
+        }
+      },
+      {
+        "name": "Lasagna Bolognese",
+        "price": 3,
+        "_id": {
+          "$oid": "c8638af1fd8ac30233da10da"
+        }
+      },
+      {
+        "name": "Risotto al Funghi",
+        "price": 3,
+        "_id": {
+          "$oid": "bddffbc3d453232502a24efc"
+        }
+      },
+      {
+        "name": "Tiramisu",
+        "price": 1,
+        "_id": {
+          "$oid": "2767bb3b64428ac30904e3ed"
+        }
+      }
+    ],
+    "imageUrl": "https://ilcafferifugio.com/wp-content/uploads/2021/07/Italian-Food.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394658"
+  },
+  {
+    "user": "User13",
+    "restaurantName": "Hung Hom Cantonese",
+    "area": "Hung Hom",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 57,
+    "cuisines": [
+      "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Dim Sum Platter",
+        "price": 5,
+        "_id": {
+          "$oid": "2bcf0dbfec556edafc9e7b1b"
+        }
+      },
+      {
+        "name": "Roast Duck with Rice",
+        "price": 3,
+        "_id": {
+          "$oid": "88f04ab43c40a0a7fce6bd4f"
+        }
+      },
+      {
+        "name": "Sweet and Sour Pork",
+        "price": 2,
+        "_id": {
+          "$oid": "9bf1c5358c5f5ce738cbd1d3"
+        }
+      },
+      {
+        "name": "Beef Chow Fun",
+        "price": 3,
+        "_id": {
+          "$oid": "e9db2ff9f9d94ad2c1b062e1"
+        }
+      },
+      {
+        "name": "Mango Pudding",
+        "price": 1,
+        "_id": {
+          "$oid": "abaf4df860cc386eacea70e6"
+        }
+      }
+    ],
+    "imageUrl": "https://qph.cf2.quoracdn.net/main-qimg-e29b1d298b4361ca56e1ef5d13944b3a-lq",
+    "lastUpdated": "2024-02-01T18:08:00.394684"
+  },
+  {
+    "user": "User14",
+    "restaurantName": "Causeway Bay Sushi House",
+    "area": "Causeway Bay",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 32,
+    "cuisines": [
+      "Japanese"
+    ],
+    "menuItems": [
+      {
+        "name": "Salmon Nigiri",
+        "price": 1,
+        "_id": {
+          "$oid": "3dadcf9d3dc5e8acddbfee7a"
+        }
+      },
+      {
+        "name": "Tuna Sashimi",
+        "price": 1,
+        "_id": {
+          "$oid": "edc94a34f84d4c9faf7b57cc"
+        }
+      },
+      {
+        "name": "Chicken Teriyaki Don",
+        "price": 1,
+        "_id": {
+          "$oid": "c8bac1cb9eae543cde7d1bc1"
+        }
+      },
+      {
+        "name": "Tempura Udon",
+        "price": 3,
+        "_id": {
+          "$oid": "faa2beeec3658e1f119caa9c"
+        }
+      },
+      {
+        "name": "Miso Soup",
+        "price": 2,
+        "_id": {
+          "$oid": "6da0ebcedf09bf7d6f8f381a"
+        }
+      }
+    ],
+    "imageUrl": "https://ik.imagekit.io/awwybhhmo/satellite_images/japanese/beyondmenu/hero/16.jpg?tr=w-3840,q-50",
+    "lastUpdated": "2024-02-01T18:08:00.394711"
+  },
+  {
+    "user": "User15",
+    "restaurantName": "Aegean Delights",
+    "area": "Causeway Bay",
+    "country": "Hong Kong",
+    "deliveryPrice": 10,
+    "estimatedDeliveryTime": 16,
+    "cuisines": [
+      "Greek"
+    ],
+    "menuItems": [
+      {
+        "name": "Moussaka",
+        "price": 4, 
+        "_id": {
+          "$oid": "1b4faabfdbb457b370abe11e"
+        }
+      },
+      {
+        "name": "Souvlaki Plate (Chicken)",
+        "price": 3,
+        "_id": {
+          "$oid": "80ecbddeeabd4ef31b8fac37"
+        }
+      },
+      {
+        "name": "Greek Salad",
+        "price": 2,
+        "_id": {
+          "$oid": "a20903bef94d1aa2cd1f4f6c"
+        }
+      },
+      {
+        "name": "Spanakopita (Spinach Pie)",
+        "price": 1,
+        "_id": {
+          "$oid": "ea3050be3cfeff026c167365"
+        }
+      },
+      {
+        "name": "Baklava",
+        "price": 0,
+        "_id": {
+          "$oid": "8c2442efefdaef0c433b4068"
+        }
+      }
+    ],
+    "imageUrl": "https://images.squarespace-cdn.com/content/5e484ab628c78d6f7e602d73/1693838490214-1M5917HWO6EMFXA7C3V3/greek-street-food.jpg?format=1500w&content-type=image%2Fjpeg",
+    "lastUpdated": "2024-02-01T18:08:00.394738"
+  },
+  {
+    "user": "User16",
+    "restaurantName": "Bosphorus Bites",
+    "area": "Causeway Bay",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 57,
+    "cuisines": [
+      "Turkish"
+    ],
+    "menuItems": [
+      {
+        "name": "Kebab Plate (Lamb)",
+        "price": 7, 
+        "_id": {
+          "$oid": "eedbed297de7fdf46fbcddeb"
+        }
+      },
+      {
+        "name": "Meze Platter",
+        "price": 3,
+        "_id": {
+          "$oid": "afffab6b6d9c4c5be5ba5658"
+        }
+      },
+      {
+        "name": "Turkish Pide (Cheese and Spinach)",
+        "price": 2,
+        "_id": {
+          "$oid": "bde78f4de92d610f6dbb535b"
+        }
+      },
+      {
+        "name": "İskender Kebab",
+        "price": 2,
+        "_id": {
+          "$oid": "a372bcabbdffe6a1d3d3521d"
+        }
+      },
+      {
+        "name": "Baklava",
+        "price": 1,
+        "_id": {
+          "$oid": "4f944e968a85dc7a45de2089"
+        }
+      }
+    ],
+    "imageUrl": "https://www.tasteatlas.com/images/dishes/3ab81ec46f604f85bcc3cc51fd17c446.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.394781"
+  },
+  {
+    "user": "User17",
+    "restaurantName": "East Meets West Bites",
+    "area": "Causeway Bay",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 27,
+    "cuisines": [
+      "Japanese", "Chinese"
+    ],
+    "menuItems": [
+      {
+        "name": "Sushi Roll Sampler (4 pieces)",
+        "price": 2,
+        "_id": {
+          "$oid": "5976bcb1eac9beabe0a8e5b0"
+        }
+      },
+      {
+        "name": "Chicken Gyoza (3 pieces)",
+        "price": 3,
+        "_id": {
+          "$oid": "5f53f53ddee3056dfdef9153"
+        }
+      },
+      {
+        "name": "Mini Wonton Soup",
+        "price": 3,
+        "_id": {
+          "$oid": "e2415ebc4aeeebaadaef2e6e"
+        }
+      },
+      {
+        "name": "Spring Roll (2 pieces)",
+        "price": 2,
+        "_id": {
+          "$oid": "f2dbde68bfcb7e712fd69fa8"
+        }
+      },
+      {
+        "name": "Fried Rice with Egg",
+        "price": 0,
+        "_id": {
+          "$oid": "fd25d9c1ccc06a68a9f2b7b1"
+        }
+      }
+    ],
+    "imageUrl": "https://www.thespruceeats.com/thmb/IBleE8FbgIC30VepS-WtyW0wqTg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fried-wonton-with-shrimp-or-tofu-3217637-step-09-62cb6a1a50d04ddc8828aa94b712e95b.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.400854"
+  },
+  {
+    "user": "User18",
+    "restaurantName": "Cafe Leviossa",
+    "area": "North Point",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 25,
+    "cuisines": [
+      "Noodles", "BBQ"
+    ],
+    "menuItems": [
+      {
+        "name": "BBQ Pork Buns (2 pieces)",
+        "price": 4,
+        "_id": {
+          "$oid": "51e4ebfc06dc64a2b6ba0dda"
+        }
+      },
+      {
+        "name": "Beef Skewers (2 pieces)",
+        "price": 3,
+        "_id": {
+          "$oid": "9e1c5ac7f8cc575155bda645"
+        }
+      },
+      {
+        "name": "Vegetable Spring Rolls (3 pieces)",
+        "price": 2,
+        "_id": {
+          "$oid": "eebc632c4efe5b1bdb9c7f88"
+        }
+      },
+      {
+        "name": "Cold Noodle Salad",
+        "price": 0,
+        "_id": {
+          "$oid": "2aaacde46e6fc8ae3c6b589e"
+        }
+      },
+      {
+        "name": "Mini Char Siu Rice Bowl",
+        "price": 0,
+        "_id": {
+          "$oid": "dddbe0c9ade1cc8ba80dd4c1"
+        }
+      }
+    ],
+    "imageUrl": "https://food-images.files.bbci.co.uk/food/recipes/char_siu_pork_belly_56622_16x9.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.400905"
+  },
+  {
+    "user": "User19",
+    "restaurantName": "Green Grill Cafe",
+    "area": "North Point",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 19,
+    "cuisines": [
+      "Organic", "BBQ", "Cafe"
+    ],
+    "menuItems": [
+      {
+        "name": "Organic Veggie Wrap",
+        "price": 3,
+        "_id": {
+          "$oid": "dfe4d1adf6da6e175ccacf96"
+        }
+      },
+      {
+        "name": "BBQ Chicken Slider",
+        "price": 2,
+        "_id": {
+          "$oid": "a4f6fca08b4ab2dd9634c724"
+        }
+      },
+      {
+        "name": "Grilled Corn on the Cob",
+        "price": 2,
+        "_id": {
+          "$oid": "bfece3cfb545fce0717bd2cc"
+        }
+      },
+      {
+        "name": "Pulled Pork Taco",
+        "price": 3,
+        "_id": {
+          "$oid": "3ffbcd1cd392acf87137cdbe"
+        }
+      },
+      {
+        "name": "Homemade Apple Pie",
+        "price": 0,
+        "_id": {
+          "$oid": "9f615f08c05b2e3ecdcb7b61"
+        }
+      }
+    ],
+    "imageUrl": "https://assets.epicurious.com/photos/59824aa0815802499dc5ec0b/16:9/w_2000,h_1125,c_limit/fresh-garden-wrap-recipe-HC-080217.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.400935"
+  },
+  {
+    "user": "User20",
+    "restaurantName": "Zen Sushi & Vegan Bites",
+    "area": "North Point",
+    "country": "Hong Kong",
+    "deliveryPrice": 10, 
+    "estimatedDeliveryTime": 29,
+    "cuisines": [
+      "Japanese", "Vegan"
+    ],
+    "menuItems": [
+      {
+        "name": "Vegan Sushi Platter (6 pieces)",
+        "price": 3,
+        "_id": {
+          "$oid": "f5bfffdeb838ffdffe9ae330"
+        }
+      },
+      {
+        "name": "Miso Soup with Tofu",
+        "price": 2,
+        "_id": {
+          "$oid": "3bbeece50bada11ebbe24edb"
+        }
+      },
+      {
+        "name": "Edamame",
+        "price": 0,
+        "_id": {
+          "$oid": "1a6ef0ee9997dd577d6ae35c"
+        }
+      },
+      {
+        "name": "Tempura Vegetables",
+        "price": 1,
+        "_id": {
+          "$oid": "4e9ff5cfa82e3331fb9fa0d2"
+        }
+      },
+      {
+        "name": "Green Tea Ice Cream",
+        "price": 0,
+        "_id": {
+          "$oid": "be712a6abfefdb5b7ea1cb6d"
+        }
+      }
+    ],
+    "imageUrl": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/vegan-meal-plan-732x549-thumbnail-732x549.jpg",
+    "lastUpdated": "2024-02-01T18:08:00.400961"
+  }
+  
+]

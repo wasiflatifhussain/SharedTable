@@ -12,14 +12,14 @@ const handleValidationErrors = async (req: Request, res: Response, next: NextFun
 export const validateMyUserRequest = [
     body("name").isString().notEmpty().withMessage("Name must be a string."),
     body("addressLine1").isString().notEmpty().withMessage("Address must be a string"),
-    body("city").isString().notEmpty().withMessage("City must be a string"),
+    body("area").isString().notEmpty().withMessage("Area must be a string"),
     body("country").isString().notEmpty().withMessage("Country must be a string"),
     handleValidationErrors, 
 ]
 
 export const validateMyRestaurantRequest = [
     body("restaurantName").notEmpty().withMessage("Restaurant name is required"),
-    body("city").notEmpty().withMessage("City is required"),
+    body("area").notEmpty().withMessage("Area is required"),
     body("country").notEmpty().withMessage("Country is required"),
     body("deliveryPrice")
       .isFloat({ min: 0 })

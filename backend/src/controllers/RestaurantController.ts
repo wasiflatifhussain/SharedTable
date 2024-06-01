@@ -22,7 +22,7 @@ const getRestaurant = async (req: Request, res: Response) => {
 
 const searchRestaurant = async (req: Request, res: Response) => {
     try {
-        const city = req.params.city;
+        const area = req.params.area;
 
         const searchQuery = (req.query.searchQuery as string) || "";
         const selectedCuisines = (req.query.selectedCuisines as string) || "";
@@ -31,9 +31,9 @@ const searchRestaurant = async (req: Request, res: Response) => {
 
         let query: any = {};
 
-        query["city"] = new RegExp(city, "i");
-        const cityCheck = await Restaurant.countDocuments(query);  //return no. of restaurants for a given query
-        if (cityCheck === 0) {
+        query["area"] = new RegExp(area, "i");
+        const areaCheck = await Restaurant.countDocuments(query);  //return no. of restaurants for a given query
+        if (areaCheck === 0) {
             return res.status(404).json({
                 data: [],
                 pagination: {

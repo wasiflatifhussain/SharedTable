@@ -4,12 +4,12 @@ import RestaurantController from "../controllers/RestaurantController";
 
 const router = express.Router();
 
-router.get("/search/:city", 
-    param("city")
+router.get("/search/:area", 
+    param("area")
         .isString()
         .trim()
         .notEmpty()
-        .withMessage("City parameter must be a valid string8"),
+        .withMessage("Area parameter must be a valid string8"),
         RestaurantController.searchRestaurant
 );
 

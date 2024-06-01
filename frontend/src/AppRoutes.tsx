@@ -10,14 +10,16 @@ import background3 from "../src/assets/hero21.png";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
+import DonateSupportPage from "./pages/DonateSupportPage";
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout showHero><HomePage /></Layout>}/>
             <Route path="/auth-callback" element={<AuthCallbackPage />} />
-            <Route path="/search/:city" element={<Layout showHero={false}><SearchPage /></Layout>} />
+            <Route path="/search/:area" element={<Layout showHero={false}><SearchPage /></Layout>} />
             <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage /></Layout>} />
+            <Route path="/donate-support" element={<Layout bgImage={background3}><DonateSupportPage /></Layout>}/>
             <Route element={<ProtectedRoute />}>
                 <Route path="/order-status" element={<Layout bgImage={background3}><OrderStatusPage /></Layout>}/>
                 <Route path="/user-profile" element={<Layout bgImage={background3}><UserProfilePage /></Layout>}/>

@@ -50,7 +50,7 @@ const OrderItemCard = ({order}: Props) => {
                     <div>
                         Delivery Address:
                         <span className="ml-2 font-normal">
-                            {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
+                            {order.deliveryDetails.addressLine1}, {order.deliveryDetails.area}
                         </span>
                     </div>
                     <div>

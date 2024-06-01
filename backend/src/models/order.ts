@@ -7,7 +7,7 @@ const orderSchema = new mongoose.Schema({
         email: {type: String, required: true},
         name: {type: String, required: true},
         addressLine1: {type: String, required: true},
-        city: {type: String, required: true},
+        area: {type: String, required: true},
     },
     cartItems: [
         {

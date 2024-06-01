@@ -3,7 +3,7 @@ export type User = {
     email: string;
     name: string;
     addressLine1: string;
-    city: string;
+    area: string;
     country: string;
 };
 
@@ -17,7 +17,7 @@ export type Restaurant = {
     _id: string;
     user: string;
     restaurantName: string;
-    city: string;
+    area: string;
     country: string;
     deliveryPrice: number;
     estimatedDeliveryTime: number;
@@ -46,7 +46,7 @@ export type Order = {
     deliveryDetails: {
        name: string;
        addressLine1: string;
-       city: string;
+       area: string;
        email: string; 
     };
     totalAmount: number;

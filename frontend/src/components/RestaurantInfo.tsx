@@ -14,7 +14,7 @@ const RestaurantInfo = ({ restaurant }: Props) => {
                     {restaurant.restaurantName}
                 </CardTitle>
                 <CardDescription>
-                    {restaurant.city}, {restaurant.country}
+                    {restaurant.area}, {restaurant.country}
                 </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-wrap">

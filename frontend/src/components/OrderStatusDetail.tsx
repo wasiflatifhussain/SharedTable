@@ -17,7 +17,7 @@ const OrderStatusDetail = ({order}: Props) => {
                     {order.deliveryDetails.name}
                 </span>
                 <span>
-                    {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
+                    {order.deliveryDetails.addressLine1}, {order.deliveryDetails.area}
                 </span>
             </div>
             <div className="flex flex-col">

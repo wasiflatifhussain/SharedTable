@@ -22,14 +22,11 @@ const HomePage = () => {
                 <span className="text-xl">
                     Look for your favourite restaurants and cuisines  with a single click!
                 </span>
-                <SearchBar placeHolder="Search by City or Town" onSubmit={handleSearchSubmit} />
+                <SearchBar placeHolder="Search by Area or Town" onSubmit={handleSearchSubmit} />
             </div>
             <div className="grid md:grid-cols-2 gap-5">
                 <div className="flex">
                     <img src={ui4} className="ui4-image" alt="ui1"/>
-                    {/* <img src={ui1} className="ui1-image" alt="ui1" style={{width: "60%", height: "45%"}} />
-                    <img src={ui2} className="ui2-image" alt="ui2" style={{marginTop: "5vh", marginLeft: "-3vh", width: "60%", height: "43%"}} />
-                    <img src={ui3} className="hidden sm:block" alt="ui3" style={{marginTop: "7vh", marginLeft: "-2.5vh", width: "60%", height: "45%"}} /> */}
                 </div>
                 <div className="flex flex-col items-center justify-center gap-4 text-center downloadmsg">
                     <span className="font-bold text-3xl tracking-tighter">

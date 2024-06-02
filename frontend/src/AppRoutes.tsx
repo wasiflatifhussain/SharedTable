@@ -7,6 +7,7 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import background from "../src/assets/hero15.png";
 import background3 from "../src/assets/hero21.png";
+import background4 from "../src/assets/back4.png";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
@@ -19,7 +20,7 @@ const AppRoutes = () => {
             <Route path="/auth-callback" element={<AuthCallbackPage />} />
             <Route path="/search/:area" element={<Layout showHero={false}><SearchPage /></Layout>} />
             <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage /></Layout>} />
-            <Route path="/donate-support" element={<Layout bgImage={background3}><DonateSupportPage /></Layout>}/>
+            <Route path="/donate-support" element={<Layout bgImage={background4}><DonateSupportPage /></Layout>}/>
             <Route element={<ProtectedRoute />}>
                 <Route path="/order-status" element={<Layout bgImage={background3}><OrderStatusPage /></Layout>}/>
                 <Route path="/user-profile" element={<Layout bgImage={background3}><UserProfilePage /></Layout>}/>

@@ -33,6 +33,34 @@ export const useGetMyOrders = () => {
     return {orders, isLoading};
 };
 
+export const useDeliveredOrdersCount = () => {
+    const fetchDeliveredOrdersCount = async (): Promise<{ [restaurantId: string]: number }> => {
+        const response = await fetch(`${API_BASE_URL}/api/order/order-count/delivered-orders-count`);
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch delivered orders count");
+        }
+
+        return response.json();
+    };
+
+    const {
+        data: deliveredOrdersCount,
+        isLoading,
+        isError,
+        error,
+        refetch
+    } = useQuery("deliveredOrdersCount", fetchDeliveredOrdersCount);
+
+    return {
+        deliveredOrdersCount,
+        isLoading,
+        isError,
+        error,
+        refetch
+    };
+};
+
 
 type CheckoutSessionRequest = {
     cartItems: {

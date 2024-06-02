@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { Request, Response } from "express";
 import Restaurant, { MenuItemType } from "../models/restaurants";
 import Order from "../models/order";
+import Donations from "../models/donations";
 
 const STRIPE = new Stripe(process.env.STRIPE_API_KEY as string);
 const FRONTEND_URL = process.env.FRONTEND_URL as string;
@@ -164,8 +165,74 @@ const createSession = async (
     return sessionData;
 };
 
+
+export const getDeliveredOrdersCount = async (req: Request, res: Response) => {
+    try {
+        // Retrieve delivered counts for each restaurant
+        const deliveredCounts = await Order.aggregate([
+            { $match: { status: "delivered" } },
+            {
+                $group: {
+                    _id: "$restaurant",
+                    deliveredCount: { $sum: 1 }
+                }
+            }
+        ]);
+
+        // Retrieve all donations
+        const allDonations = await Donations.find();
+
+        // Create a dictionary to store donations by restaurant ID
+        const donationsByRestaurant: Record<string, number> = {};
+        allDonations.forEach((donation) => {
+            donationsByRestaurant[donation.restaurantID] = donation.totalDonation;
+        });
+
+        // Initialize deliveredCountsByRestaurant object
+        const deliveredCountsByRestaurant: Record<string, { restaurantID: string; deliveredCount: number; imageUrl: string; totalDonation: number }> = {};
+
+        // Populate delivered counts and donation information for each restaurant
+        for (const item of deliveredCounts) {
+            const restaurant = await Restaurant.findById(item._id);
+            if (restaurant) {
+                const restaurantID = item._id.toString();
+                deliveredCountsByRestaurant[restaurant.restaurantName] = {
+                    restaurantID,
+                    deliveredCount: item.deliveredCount,
+                    imageUrl: restaurant.imageUrl,
+                    totalDonation: donationsByRestaurant[restaurantID] || 0 // Default to 0 if no donation found
+                };
+            }
+        }
+
+        // Get all restaurants from the restaurant collection
+        const allRestaurants = await Restaurant.find();
+
+        // Populate delivered counts and donation information for restaurants without delivered orders
+        allRestaurants.forEach((restaurant) => {
+            const restaurantName = restaurant.restaurantName;
+            if (!deliveredCountsByRestaurant[restaurantName]) {
+                const restaurantID = restaurant._id.toString();
+                deliveredCountsByRestaurant[restaurantName] = {
+                    restaurantID,
+                    deliveredCount: 0,
+                    imageUrl: restaurant.imageUrl,
+                    totalDonation: donationsByRestaurant[restaurantID] || 0 // Default to 0 if no donation found
+                };
+            }
+        });
+
+        res.json(deliveredCountsByRestaurant);
+    } catch (error) {
+        console.error("Failed to fetch delivered orders count", error);
+        res.status(500).json({ message: "Failed to fetch delivered orders count" });
+    }
+};
+
+
 export default {
     getMyOrders,
     createCheckoutSession,
     stripeWebhookHandler,
+    getDeliveredOrdersCount,
 }

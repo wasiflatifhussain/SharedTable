@@ -27,6 +27,19 @@ export type Restaurant = {
     lastUpdated: string;
 };
 
+export type Advertisement = {
+    uniqueId: string;
+    imageUrl: string;
+    plan: string;
+};
+
+export type UserAdvertisements = {
+    userId: string;
+    email: string;
+    phoneNumber: string;
+    advertisements: Advertisement[];
+};
+
 export type OrderStatus = 
         "placed" | 
         "paid" | 

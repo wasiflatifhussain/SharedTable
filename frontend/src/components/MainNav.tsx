@@ -9,6 +9,9 @@ const MainNav = () => {
         <span className="flex space-x-2 items-center">
             {isAuthenticated? (
                 <>
+                    <Link to="/advertisements" className="font-bold hover:text-[#048a52]" style={{marginRight: "20px"}}>
+                        Add/Manage Advertisements
+                    </Link>
                     <Link to="/donate-support" className="font-bold hover:text-[#048a52]" style={{marginRight: "20px"}}>
                         Donate to Support
                     </Link>

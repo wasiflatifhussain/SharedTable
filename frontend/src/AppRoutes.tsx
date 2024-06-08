@@ -12,6 +12,7 @@ import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
 import DonateSupportPage from "./pages/DonateSupportPage";
+import AddAdvertisements from "./pages/AddAdvertisements";
 
 const AppRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
             <Route path="/search/:area" element={<Layout showHero={false}><SearchPage /></Layout>} />
             <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage /></Layout>} />
             <Route path="/donate-support" element={<Layout bgImage={background4}><DonateSupportPage /></Layout>}/>
+            <Route path="/advertisements" element={<Layout bgImage={background4}><AddAdvertisements /></Layout>}/>
             <Route element={<ProtectedRoute />}>
                 <Route path="/order-status" element={<Layout bgImage={background3}><OrderStatusPage /></Layout>}/>
                 <Route path="/user-profile" element={<Layout bgImage={background3}><UserProfilePage /></Layout>}/>

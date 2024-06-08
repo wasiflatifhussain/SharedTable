@@ -116,3 +116,40 @@ export const useCreateCheckoutSession = () => {
         isLoading,
     }
 };
+
+
+export const useCreateDonationSession = () => {
+    const { getAccessTokenSilently } = useAuth0();
+    const createDonationSessionRequest = async ({ restaurantName, restaurantId, amount }) => {
+        const accessToken = await getAccessTokenSilently();
+        const response = await fetch(`${API_BASE_URL}/api/order/donate/create-donation-session`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify({ restaurantName, restaurantId, amount }),
+        });
+
+        if (!response.ok) {
+            // Convert non-2xx HTTP responses into errors:
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Unable to create donation session");
+        }
+
+        return response.json();
+    };
+
+    const { mutateAsync: createDonationSession, isLoading, error } = useMutation(createDonationSessionRequest, {
+        onSuccess: (data) => {
+            // Redirect the user to Stripe Checkout or handle the success case:
+            window.location.href = data.url;
+        },
+        onError: (error) => {
+            // Handle errors:
+            toast.error(`Error: ${error.message}`);
+        },
+    });
+
+    return { createDonationSession, isLoading, error };
+};

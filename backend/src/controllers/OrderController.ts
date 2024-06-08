@@ -52,7 +52,7 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
         return res.status(400).send(`Webhook error: ${error.message}`);
     }
 
-    if (event.type === "checkout.session.completed") {
+    if (event.type === "checkout.session.completed" && event.data.object.metadata?.type === "order") {
         const order = await Order.findById(event.data.object.metadata?.orderId);
 
         if (!order) {
@@ -63,6 +63,24 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
         order.status = "paid";
 
         await order.save();
+    }
+    else if (event.type === "checkout.session.completed" && event.data.object.metadata?.type === "donation") {
+        const restaurantId = event.data.object.metadata.restaurantId;
+        const amount = parseInt(event.data.object.metadata.amount); 
+        console.log(amount)
+    
+        try {
+            const existingDonation = await Donations.findOne({ restaurantID: restaurantId });
+            if (existingDonation) {
+                existingDonation.totalDonation += amount;
+                await existingDonation.save();
+            }
+    
+            res.status(200).send("Donation recorded");
+        } catch (error) {
+            console.error("Failed to update donations", error);
+            res.status(500).send("Failed to update donations");
+        }
     }
 
     res.status(200).send();
@@ -157,6 +175,7 @@ const createSession = async (
         metadata: {
             orderId, 
             restaurantId,
+            type: "order"
         },
         success_url: `${FRONTEND_URL}/order-status?success=true`,
         cancel_url: `${FRONTEND_URL}/detail/${restaurantId}?cancelled=true`
@@ -164,7 +183,6 @@ const createSession = async (
 
     return sessionData;
 };
-
 
 export const getDeliveredOrdersCount = async (req: Request, res: Response) => {
     try {
@@ -222,6 +240,14 @@ export const getDeliveredOrdersCount = async (req: Request, res: Response) => {
             }
         });
 
+        const sharedTableDonation = donationsByRestaurant["sharedtable"];
+        deliveredCountsByRestaurant["SharedTable"] = {
+            restaurantID: "sharedtable",
+            deliveredCount: 0,
+            imageUrl: "", // Provide a default image URL or handle it appropriately
+            totalDonation: sharedTableDonation
+        };
+
         res.json(deliveredCountsByRestaurant);
     } catch (error) {
         console.error("Failed to fetch delivered orders count", error);
@@ -230,9 +256,56 @@ export const getDeliveredOrdersCount = async (req: Request, res: Response) => {
 };
 
 
+// API endpoint to create a Stripe session for donations
+const createDonationSession = async (req: Request, res: Response) => {
+
+    const { restaurantName, restaurantId, amount } = req.body;
+
+    if (restaurantId !== "sharedtable") {
+        const restaurant = await Restaurant.findById(restaurantId);
+        console.log(restaurant)
+    
+        if (!restaurant) {
+            return res.status(404).json({ message: "Restaurant not found!" });
+        }
+    }
+
+    try {
+        const session = await STRIPE.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [{
+                price_data: {
+                    currency: 'hkd',
+                    product_data: {
+                        name: `Donation to ${restaurantName}`,
+                    },
+                    unit_amount: amount * 100,
+                },
+                quantity: 1,
+            }],
+            mode: 'payment',
+            success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${FRONTEND_URL}/cancelled`,
+            metadata: {
+                restaurantId,
+                amount,
+                type: 'donation',
+            },
+        });
+
+        res.json({ url: session.url });
+    } catch (error: any) {
+        console.error("Failed to create donation session", error);
+        res.status(500).json({ message: "Failed to create donation session" });
+    }
+};
+
+
+
 export default {
     getMyOrders,
     createCheckoutSession,
     stripeWebhookHandler,
     getDeliveredOrdersCount,
+    createDonationSession,
 }

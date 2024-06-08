@@ -1,0 +1,10 @@
+.file-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #aafabfeb; /* Change to your desired background color */
+    color: #333; /* Change to your desired text color */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}

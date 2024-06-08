@@ -13,8 +13,11 @@ router.post("/checkout/create-checkout-session",
         OrderController.createCheckoutSession
 );
 
+router.post("/donate/create-donation-session",  OrderController.createDonationSession);
+
 router.get("/order-count/delivered-orders-count", OrderController.getDeliveredOrdersCount);
 
 router.post("/checkout/webhook", OrderController.stripeWebhookHandler)
+
 
 export default router;

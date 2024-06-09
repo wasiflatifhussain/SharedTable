@@ -21,4 +21,10 @@ router.post("/add-advertisements",
     MyAdvertisementController.createAdvertisement
 );
 
+router.post("/user-advertisements", jwtCheck, jwtParse, MyAdvertisementController.getUserAdvertisements);
+
+router.post("/delete-advertisement", jwtCheck, jwtParse, MyAdvertisementController.deleteAdvertisement);
+
+router.post("/change-plan", jwtCheck, jwtParse, MyAdvertisementController.changeAdvertisementPlan);
+
 export default router;

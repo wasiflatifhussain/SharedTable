@@ -65,6 +65,85 @@ const createAdvertisement = async (req: Request, res: Response): Promise<Respons
     }
 }
 
+const getUserAdvertisements = async (req: Request, res: Response): Promise<Response> => {
+    try {
+        const { email } = req.body;
+        
+        if (!email || typeof email !== 'string') {
+            console.log("Invalid email");
+            return res.status(400).json({ success: false, message: "Invalid email" });
+        }
+
+        console.log("Finding advertisements for email:", email);
+
+        // Find user advertisements by email
+        const userAdvertisements = await UserAdvertisements.findOne({ email });
+
+        if (!userAdvertisements) {
+            console.log("User advertisements not found");
+            return res.status(404).json({ success: false, message: "User advertisements not found" });
+        }
+
+        console.log("Advertisements found");
+
+        return res.status(200).json({ success: true, userAdvertisements });
+    } catch (error) {
+        console.error("Error fetching user advertisements:", error);
+        return res.status(500).json({ success: false, message: "Something went wrong" });
+    }
+};
+
+const deleteAdvertisement = async (req: Request, res: Response): Promise<Response> => {
+    try {
+        const { email, advertisementId } = req.body;
+
+        console.log(advertisementId)
+        // Use Mongoose method to remove the subdocument
+        const result = await UserAdvertisements.updateOne(
+            { email },
+            { $pull: { advertisements: { _id: advertisementId } } }
+        );
+
+        if (result.modifiedCount === 0) {
+            console.log("Advertisement not found.");
+            return res.status(404).json({ success: false, message: "Advertisement not found" });
+        }
+
+        console.log("Advertisement deleted.")
+        return res.status(200).json({ success: true, message: "Advertisement deleted" });
+    } catch (error) {
+        console.error("Error deleting advertisement:");
+        return res.status(500).json({ success: false, message: "Something went wrong" });
+    }
+};
+
+const changeAdvertisementPlan = async (req: Request, res: Response): Promise<Response> => {
+    try {
+        const { email, advertisementId, newPlan } = req.body;
+
+        console.log(`Received request to change plan to ${newPlan} for advertisement: ${advertisementId} and email: ${email}`);
+
+        const userAdvertisements = await UserAdvertisements.findOneAndUpdate(
+            { email, "advertisements._id": advertisementId },
+            { $set: { "advertisements.$.plan": newPlan } },
+            { new: true }
+        );
+
+        if (!userAdvertisements) {
+            return res.status(404).json({ success: false, message: "User advertisements not found" });
+        }
+
+        console.log('Advertisement plan changed successfully.');
+        return res.status(200).json({ success: true, message: "Advertisement plan changed", userAdvertisements });
+    } catch (error) {
+        console.error("Error changing advertisement plan:", error);
+        return res.status(500).json({ success: false, message: "Something went wrong" });
+    }
+};
+
 export default {
-    createAdvertisement
+    createAdvertisement,
+    getUserAdvertisements,
+    deleteAdvertisement,
+    changeAdvertisementPlan,
 };

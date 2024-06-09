@@ -8,3 +8,15 @@
     font-size: 15px;
     font-weight: 500;
 }
+
+.advertisement-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+}
+
+.advertisement-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

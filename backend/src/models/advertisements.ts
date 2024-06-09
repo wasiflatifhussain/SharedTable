@@ -5,6 +5,7 @@ const advertisementSchema = new mongoose.Schema({
     imageUrl: { type: String, required: true },
     plan: { type: String, required: true },
     uniqueId: { type: String, required: true, default: () => new mongoose.Types.ObjectId().toString() },
+    issuedDate: { type: Date, required: true, default: Date.now }
 });
 
 // Define the main schema for advertisements

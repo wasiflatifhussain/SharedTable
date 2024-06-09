@@ -20,7 +20,6 @@ export const useCreateAdvertisement = () => {
         if (!response.ok) {
             throw new Error("Failed to create advertisement.");
         }
-
         return response.json();
     };
 
@@ -35,3 +34,4 @@ export const useCreateAdvertisement = () => {
 
     return { createAdvertisement, isLoading, isSuccess, error };
 };
+

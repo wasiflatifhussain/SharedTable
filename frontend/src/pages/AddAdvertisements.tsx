@@ -20,7 +20,7 @@ const AddAdvertisements = () => {
         phone: ''
     });
 
-    const [activeTab, setActiveTab] = useState('add');
+    const [activeTab, setActiveTab] = useState('manage');
     const [advertisements, setAdvertisements] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedAdId, setSelectedAdId] = useState(null);
@@ -478,16 +478,16 @@ const AddAdvertisements = () => {
             <div className="container mx-auto px-4 py-8">
                 <div className="mb-8">
                     <button 
-                        className={`px-4 py-2 rounded-md mr-2 border border-green-700 ${activeTab === 'add' ? 'bg-[#048a52] text-white' : 'bg-gray-200 text-black'}`}
-                        onClick={() => setActiveTab('add')}
-                    >
-                        Add New Advertisements
-                    </button>
-                    <button 
-                        className={`px-4 py-2 rounded-md border border-green-700 ${activeTab === 'manage' ? 'bg-[#048a52] text-white' : 'bg-gray-200 text-black'}`}
+                        className={`px-4 py-2 rounded-md mr-2 border border-green-700 ${activeTab === 'manage' ? 'bg-[#048a52] text-white' : 'bg-gray-200 text-black'}`}
                         onClick={() => setActiveTab('manage')}
                     >
                         Manage Existing Advertisements
+                    </button>
+                    <button 
+                        className={`px-4 py-2 rounded-md border border-green-700 ${activeTab === 'add' ? 'bg-[#048a52] text-white' : 'bg-gray-200 text-black'}`}
+                        onClick={() => setActiveTab('add')}
+                    >
+                        Add New Advertisements
                     </button>
                 </div>
                 {activeTab === 'add' ? renderAddAdvertisements() : renderManageAdvertisements()}

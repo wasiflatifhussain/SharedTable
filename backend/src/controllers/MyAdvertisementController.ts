@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 import cloudinary from "cloudinary";
 import User from "../models/user"; // Adjust the path as necessary
 import UserAdvertisements from "../models/advertisements"; // Adjust the path as necessary
+import Stripe from "stripe";
+
+const STRIPE = new Stripe(process.env.STRIPE_API_KEY as string);
+const FRONTEND_URL = process.env.FRONTEND_URL as string;
+const STRIPE_ENDPOINT_SECRET = process.env.STRIPE_WEBHOOK_SECRET as string;
 
 // Function to upload image to Cloudinary
 const uploadImage = async (file: Express.Multer.File): Promise<string> => {
@@ -13,6 +18,58 @@ const uploadImage = async (file: Express.Multer.File): Promise<string> => {
     const uploadResponse = await cloudinary.v2.uploader.upload(dataURI);
     return uploadResponse.url;
 }
+
+// const createAdvertisement = async (req: Request, res: Response): Promise<Response> => {
+//     try {
+//         const { email, phone, countryCode, name, plan } = req.body;
+//         const file = req.file as Express.Multer.File;
+
+//         // Upload image to Cloudinary
+//         const imageUrl = await uploadImage(file);
+
+//         // Find user by email
+//         const user = await User.findOne({ email });
+//         if (!user) {
+//             return res.status(404).json({ success: false, message: "User not found" });
+//         }
+
+//         const userId = user._id.toString();
+//         const phoneNumber = `${countryCode}${phone}`;
+
+//         // Check if user advertisement entry exists
+//         let userAdvertisement = await UserAdvertisements.findOne({ email, userId });
+
+//         if (!userAdvertisement) {
+//             // Create new advertisement entry
+//             userAdvertisement = new UserAdvertisements({
+//                 userId,
+//                 email,
+//                 phoneNumber,
+//                 advertisements: [{
+//                     imageUrl,
+//                     plan,
+//                     uniqueId: new mongoose.Types.ObjectId().toString()
+//                 }]
+//             });
+//         } else {
+//             // Append new advertisement to existing entry
+//             userAdvertisement.advertisements.push({
+//                 imageUrl,
+//                 plan,
+//                 uniqueId: new mongoose.Types.ObjectId().toString()
+//             });
+//         }
+
+//         // Save the advertisement entry
+//         await userAdvertisement.save();
+
+//         return res.status(201).json({ success: true, userAdvertisement });
+//     } catch (error) {
+//         console.error("Error creating advertisement:", error);
+//         return res.status(500).json({ success: false, message: "Something went wrong" });
+//     }
+// }
+
 
 const createAdvertisement = async (req: Request, res: Response): Promise<Response> => {
     try {
@@ -31,39 +88,54 @@ const createAdvertisement = async (req: Request, res: Response): Promise<Respons
         const userId = user._id.toString();
         const phoneNumber = `${countryCode}${phone}`;
 
-        // Check if user advertisement entry exists
-        let userAdvertisement = await UserAdvertisements.findOne({ email, userId });
+        let planPrice = 0;
+        if (plan === "20ads") {
+            planPrice = 400;
+        } else if (plan === "40ads") {
+            planPrice = 740;
+        } else {
+            planPrice = 1020;
+        }
 
-        if (!userAdvertisement) {
-            // Create new advertisement entry
-            userAdvertisement = new UserAdvertisements({
+        // Create a Stripe payment session
+        const session = await STRIPE.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [{
+                price_data: {
+                    currency: 'hkd',
+                    product_data: {
+                        name: `Advertisement for ${name}`,
+                    },
+                    unit_amount: planPrice * 100,
+                },
+                quantity: 1,
+            }],
+            mode: 'payment',
+            success_url: `${FRONTEND_URL}/advertisements`,
+            cancel_url: `${FRONTEND_URL}/cancelled`,
+            metadata: {
                 userId,
                 email,
                 phoneNumber,
-                advertisements: [{
-                    imageUrl,
-                    plan,
-                    uniqueId: new mongoose.Types.ObjectId().toString()
-                }]
-            });
-        } else {
-            // Append new advertisement to existing entry
-            userAdvertisement.advertisements.push({
-                imageUrl,
                 plan,
-                uniqueId: new mongoose.Types.ObjectId().toString()
-            });
-        }
+                imageUrl,
+                uniqueId: new mongoose.Types.ObjectId().toString(),
+                type: 'advertisement',
+            },
+        });
 
-        // Save the advertisement entry
-        await userAdvertisement.save();
 
-        return res.status(201).json({ success: true, userAdvertisement });
+        // find the checkout code in ordercontroller.ts under strikewebhookhandler
+        console.log("Payment session created successfully:", session.url);
+        return res.json({ success: true, url: session.url });
     } catch (error) {
         console.error("Error creating advertisement:", error);
         return res.status(500).json({ success: false, message: "Something went wrong" });
     }
-}
+};
+
+
+
 
 const getUserAdvertisements = async (req: Request, res: Response): Promise<Response> => {
     try {
@@ -140,6 +212,7 @@ const changeAdvertisementPlan = async (req: Request, res: Response): Promise<Res
         return res.status(500).json({ success: false, message: "Something went wrong" });
     }
 };
+
 
 export default {
     createAdvertisement,

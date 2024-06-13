@@ -27,4 +27,5 @@ router.post("/delete-advertisement", jwtCheck, jwtParse, MyAdvertisementControll
 
 router.post("/change-plan", jwtCheck, jwtParse, MyAdvertisementController.changeAdvertisementPlan);
 
+
 export default router;

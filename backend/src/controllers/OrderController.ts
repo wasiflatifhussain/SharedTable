@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import Restaurant, { MenuItemType } from "../models/restaurants";
 import Order from "../models/order";
 import Donations from "../models/donations";
+import UserAdvertisements from "../models/advertisements";
 
 const STRIPE = new Stripe(process.env.STRIPE_API_KEY as string);
 const FRONTEND_URL = process.env.FRONTEND_URL as string;
@@ -80,6 +81,33 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
         } catch (error) {
             console.error("Failed to update donations", error);
             res.status(500).send("Failed to update donations");
+        }
+    }
+
+    else if (event.type === "checkout.session.completed" && event.data.object.metadata?.type === "advertisement") {
+        console.log("Processing advertisement creation for session:", event.data.object.id);
+
+        try {
+            const { userId, email, phoneNumber, plan, imageUrl, uniqueId } = event.data.object.metadata;
+            let userAdvertisement = await UserAdvertisements.findOne({ email, userId });
+
+            if (!userAdvertisement) {
+                userAdvertisement = new UserAdvertisements({
+                    userId,
+                    email,
+                    phoneNumber,
+                    advertisements: [{ imageUrl, plan, uniqueId }]
+                });
+            } else {
+                userAdvertisement.advertisements.push({ imageUrl, plan, uniqueId });
+            }
+
+            await userAdvertisement.save();
+            console.log("Advertisement created successfully");
+            return res.status(200).json({ success: true, userAdvertisement });
+        } catch (error) {
+            console.error("Failed to create advertisement:", error);
+            return res.status(500).json({ success: false, message: "Failed to create advertisement" });
         }
     }
 
@@ -284,7 +312,7 @@ const createDonationSession = async (req: Request, res: Response) => {
                 quantity: 1,
             }],
             mode: 'payment',
-            success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `${FRONTEND_URL}/donate-support`,
             cancel_url: `${FRONTEND_URL}/cancelled`,
             metadata: {
                 restaurantId,

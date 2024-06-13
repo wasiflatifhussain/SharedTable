@@ -24,11 +24,14 @@ export const useCreateAdvertisement = () => {
     };
 
     const { mutate: createAdvertisement, isLoading, isSuccess, error } = useMutation(createAdvertisementRequest, {
-        onSuccess: () => {
-            toast.success("Advertisement created!");
+        onSuccess: (data) => {
+            // Redirect the user to Stripe Checkout or handle the success case:
+            window.location.href = data.url;
+            toast.success("Advertisement created.")
         },
-        onError: () => {
-            toast.error("Failed to create advertisement.");
+        onError: (error) => {
+            // Handle errors:
+            toast.error(`Error: Failed to create advertisement.`);
         },
     });
 

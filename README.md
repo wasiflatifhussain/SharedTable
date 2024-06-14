@@ -13,7 +13,14 @@
 10. Using Stripe to handle payments
 11. Using Stripe CLI for real-time delivery details information via web-hooks.
 12. Implemented a donations page that uses Stripe CLI and a backend collections database to keep track of restaurants and allows people to donation to the restaurants as well as donate to the website.
-13. Currently implementing an image detection system to enable automatic food recognition for restaurants, simplifying menu entry processes. Link to the trained AI Model: https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
+13. Implemented an advertisement system from scratch;
+    a. Add advertisements as per wish
+    b. Pay for post by Stripe payment using credit card
+    c. Manage advertises - change advertisement plans, cancel advertisements, renew advertisement plans
+    d. Keep track of how many times your advertisement appeared on people's app to learn about your advertisement reach
+    e. Used a backend system to randomly choose an advertise everytime and display to users
+    f. Display advertisement as ad pop-up and allow users to cancel it
+15. Currently implementing an image detection system to enable automatic food recognition for restaurants, simplifying menu entry processes. Link to the trained AI Model: https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
 
 
 #### Samples of images of the interface:

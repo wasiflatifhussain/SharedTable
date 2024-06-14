@@ -27,5 +27,6 @@ router.post("/delete-advertisement", jwtCheck, jwtParse, MyAdvertisementControll
 
 router.post("/change-plan", jwtCheck, jwtParse, MyAdvertisementController.changeAdvertisementPlan);
 
+router.get("/random-advertisement", MyAdvertisementController.getRandomAdvertisement);
 
 export default router;

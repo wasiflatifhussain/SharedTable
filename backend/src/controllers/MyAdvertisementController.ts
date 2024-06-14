@@ -5,6 +5,23 @@ import User from "../models/user"; // Adjust the path as necessary
 import UserAdvertisements from "../models/advertisements"; // Adjust the path as necessary
 import Stripe from "stripe";
 
+interface Advertisement {
+    imageUrl: string;
+    plan: string;
+    uniqueId: string;
+    issuedDate: Date;
+    leftToDisplay: number;
+    _id: mongoose.Types.ObjectId;
+}
+
+interface UserAdvertisementDocument {
+    _id: mongoose.Types.ObjectId;
+    userId: string;
+    email: string;
+    phoneNumber: string;
+    advertisements: Advertisement[];
+}
+
 const STRIPE = new Stripe(process.env.STRIPE_API_KEY as string);
 const FRONTEND_URL = process.env.FRONTEND_URL as string;
 const STRIPE_ENDPOINT_SECRET = process.env.STRIPE_WEBHOOK_SECRET as string;
@@ -194,10 +211,19 @@ const changeAdvertisementPlan = async (req: Request, res: Response): Promise<Res
         const { email, advertisementId, newPlan } = req.body;
 
         console.log(`Received request to change plan to ${newPlan} for advertisement: ${advertisementId} and email: ${email}`);
-
+        let leftToDisplay = 0
+        if (newPlan === "20ads") {
+            leftToDisplay = 20;
+        }
+        else if (newPlan === "40ads") {
+            leftToDisplay = 40;
+        }
+        else if (newPlan === "60ads") {
+            leftToDisplay = 60;
+        }
         const userAdvertisements = await UserAdvertisements.findOneAndUpdate(
             { email, "advertisements._id": advertisementId },
-            { $set: { "advertisements.$.plan": newPlan } },
+            { $set: { "advertisements.$.plan": newPlan, "advertisements.$.leftToDisplay": leftToDisplay } },
             { new: true }
         );
 
@@ -213,10 +239,76 @@ const changeAdvertisementPlan = async (req: Request, res: Response): Promise<Res
     }
 };
 
+// const getRandomAdvertisement = async (req: Request, res: Response) => {
+//     try {
+//         const advertisements = await UserAdvertisements.aggregate([
+//             { $unwind: "$advertisements" },
+//             { $sample: { size: 1 } } // Get a random advertisement
+//         ]);
+
+//         if (!advertisements || advertisements.length === 0) {
+//             return res.status(404).json({ success: false, message: "No advertisements found" });
+//         }
+
+//         return res.status(200).json({ success: true, advertisement: advertisements[0].advertisements });
+//     } catch (error) {
+//         console.error("Error fetching random advertisement:", error);
+//         return res.status(500).json({ success: false, message: "Something went wrong" });
+//     }
+// };
+
+const getRandomAdvertisement = async (req: Request, res: Response) => {
+    const userEmail = req.query.email as string; // Assuming the user's email is passed as a query parameter
+
+    try {
+        let advertisement: Advertisement | null = null;
+
+        while (!advertisement) {
+            // Get a random user whose email is not the same as the given user's email
+            const randomUser = await UserAdvertisements.aggregate<UserAdvertisementDocument>([
+                { $match: { email: { $ne: userEmail } } },
+                { $sample: { size: 1 } } // Get a random user
+            ]);
+
+            if (randomUser.length === 0) {
+                return res.status(404).json({ success: false, message: "No suitable advertisements found" });
+            }
+
+            // Get the user's advertisements
+            const userAdvertisements = randomUser[0].advertisements;
+
+            // Filter advertisements with leftToDisplay > 0
+            const validAdvertisements = userAdvertisements.filter((ad: Advertisement) => ad.leftToDisplay > 0);
+
+            if (validAdvertisements.length === 0) {
+                continue; // No valid advertisements for this user, continue to the next random user
+            }
+
+            // Select a random advertisement from the valid advertisements
+            const randomAdIndex = Math.floor(Math.random() * validAdvertisements.length);
+            advertisement = validAdvertisements[randomAdIndex];
+
+            // Decrement leftToDisplay by 1
+            advertisement.leftToDisplay -= 1;
+
+            // Update the advertisement in the database
+            await UserAdvertisements.updateOne(
+                { _id: randomUser[0]._id, "advertisements._id": advertisement._id },
+                { $set: { "advertisements.$.leftToDisplay": advertisement.leftToDisplay } }
+            );
+        }
+
+        return res.status(200).json({ success: true, advertisement });
+    } catch (error) {
+        console.error("Error fetching random advertisement:", error);
+        return res.status(500).json({ success: false, message: "Something went wrong" });
+    }
+};
 
 export default {
     createAdvertisement,
     getUserAdvertisements,
     deleteAdvertisement,
     changeAdvertisementPlan,
+    getRandomAdvertisement,
 };

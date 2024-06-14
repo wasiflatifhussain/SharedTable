@@ -91,15 +91,25 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
             const { userId, email, phoneNumber, plan, imageUrl, uniqueId } = event.data.object.metadata;
             let userAdvertisement = await UserAdvertisements.findOne({ email, userId });
 
+            let leftToDisplay = 0
+            if (plan === "20ads") {
+                leftToDisplay = 20;
+            }
+            else if (plan === "40ads") {
+                leftToDisplay = 40;
+            }
+            else if (plan === "60ads") {
+                leftToDisplay = 60;
+            }
             if (!userAdvertisement) {
                 userAdvertisement = new UserAdvertisements({
                     userId,
                     email,
                     phoneNumber,
-                    advertisements: [{ imageUrl, plan, uniqueId }]
+                    advertisements: [{ imageUrl, plan, uniqueId, leftToDisplay }]
                 });
             } else {
-                userAdvertisement.advertisements.push({ imageUrl, plan, uniqueId });
+                userAdvertisement.advertisements.push({ imageUrl, plan, uniqueId, leftToDisplay });
             }
 
             await userAdvertisement.save();

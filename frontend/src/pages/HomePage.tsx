@@ -3,9 +3,13 @@ import appDownloadImage from "../assets/appDownload.png";
 import "./HomePage.css";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
+import { useFetchAdvertisement } from "@/api/MyAdvertisementApi";
+import PopupModal from "@/components/PopupModal";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const HomePage = () => {
     const navigate = useNavigate();
+    const { data, showModal, handleCloseModal } = useFetchAdvertisement();
 
     const handleSearchSubmit = (searchFormValues: SearchForm) => {
         navigate({
@@ -38,6 +42,9 @@ const HomePage = () => {
                     <img src={appDownloadImage} alt="download" />
                 </div>
             </div>
+            {data && data.success && (
+                <PopupModal show={showModal} onClose={handleCloseModal} ad={data.advertisement} />
+            )}
         </div>
     )
 }

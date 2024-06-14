@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useCreateAdvertisement } from "@/api/MyAdvertisementApi"; // Adjust the path as necessary
+import { useCreateAdvertisement, useFetchAdvertisement } from "@/api/MyAdvertisementApi"; // Adjust the path as necessary
 import "./AddAdvertisements.css";
 import { useAuth0 } from '@auth0/auth0-react';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import ConfirmModal from '@/components/ConfirmModal';
 import ConfirmCancelModal from '@/components/ConfirmCancelModal';
+import PopupModal from '@/components/PopupModal';
 
 const AddAdvertisements = () => {
+    const { data, showModal, handleCloseModal } = useFetchAdvertisement();
     const { getAccessTokenSilently, user, isAuthenticated } = useAuth0();
     const { createAdvertisement } = useCreateAdvertisement();
     const [image, setImage] = useState(null);
@@ -358,15 +360,25 @@ const AddAdvertisements = () => {
         
     }
     
-    const planSection = (planName: string, issuedDate: string, advertisementId: string) => {
+    const planSection = (planName: string, issuedDate: string, advertisementId: string, leftToDisplay: number) => {
         console.log("advertisement id = ", advertisementId)
         const issuedDateObj = new Date(issuedDate);
         const currentDate = new Date();
-    
+        
         const timeDifference = currentDate.getTime() - issuedDateObj.getTime();
         const daysPassed = Math.floor(timeDifference / (1000 * 3600 * 24));
         const hoursPassed = Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600));
-    
+        
+        let displayed = 0;
+        if (planName === "20ads") {
+            displayed = 20 - leftToDisplay;
+        }
+        else if (planName === "40ads") {
+            displayed = 40 - leftToDisplay;
+        }
+        else if (planName === "60ads") {
+            displayed = 60 - leftToDisplay;
+        }
         return (
             <div>
                 {planName === "20ads" && 
@@ -378,6 +390,8 @@ const AddAdvertisements = () => {
                         <p style={{fontSize: "12px"}}>A total of 20 Ads will be displayed to different users throughout the day.</p>
                         <p style={{fontSize: "12px"}}><b>Date of plan issue:</b> {issuedDateObj.toLocaleDateString()}</p>
                         <p style={{fontSize: "12px"}}><b>Number of days passed:</b> {daysPassed} days, {hoursPassed} hours</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times displayed this month:</b> {displayed} times</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times left before renewal required:</b> {leftToDisplay} times</p>
                         <div className="flex justify-between mt-4">
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
@@ -405,6 +419,8 @@ const AddAdvertisements = () => {
                         <p style={{fontSize: "12px"}}>A total of 40 Ads will be displayed to different users throughout the day.</p>
                         <p style={{fontSize: "12px"}}><b>Date of plan issue:</b> {issuedDateObj.toLocaleDateString()}</p>
                         <p style={{fontSize: "12px"}}><b>Number of days passed:</b> {daysPassed} days, {hoursPassed} hours</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times displayed this month:</b> {displayed} times</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times left before renewal required:</b> {leftToDisplay} times</p>
                         <div className="flex justify-between mt-4">
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
@@ -432,6 +448,8 @@ const AddAdvertisements = () => {
                         <p style={{fontSize: "12px"}}>A total of 60 Ads will be displayed to different users throughout the day.</p>
                         <p style={{fontSize: "12px"}}><b>Date of plan issue:</b> {issuedDateObj.toLocaleDateString()}</p>
                         <p style={{fontSize: "12px"}}><b>Number of days passed:</b> {daysPassed} days, {hoursPassed} hours</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times displayed this month:</b> {displayed} times</p>
+                        <p style={{fontSize: "12px"}}><b>Number of times left before renewal required:</b> {leftToDisplay} times</p>
                         <div className="flex justify-between mt-4">
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
@@ -463,7 +481,7 @@ const AddAdvertisements = () => {
                         <div key={advertisement._id.toString()} className="p-4 border rounded-lg shadow-md border border-[#63c49c] advertisement-card">
                             <img src={advertisement.imageUrl} alt="Advertisement" className="advertisement-image mb-4" />
                             <div className="mt-auto">
-                                {planSection(advertisement.plan, advertisement.issuedDate, advertisement._id.toString())}
+                                {planSection(advertisement.plan, advertisement.issuedDate, advertisement._id.toString(), advertisement.leftToDisplay)}
                             </div>
                         </div>
                     </div>
@@ -504,8 +522,12 @@ const AddAdvertisements = () => {
                     onConfirm={handleCancelPlan} 
                     advertisementId={cancelAdId} 
                 />
+
+            {data && data.success && (
+                <PopupModal show={showModal} onClose={handleCloseModal} ad={data.advertisement} />
+            )}
             </div>
-        ), [plan, image, imageFile, userDetails, activeTab, advertisements, modalOpen,cancelModalOpen]
+        ), [plan, image, imageFile, userDetails, activeTab, advertisements, modalOpen,cancelModalOpen, showModal]
     );
 };
 

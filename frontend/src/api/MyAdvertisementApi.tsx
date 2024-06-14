@@ -1,6 +1,7 @@
 import { UserAdvertisements } from "@/types"; // Ensure this path is correct
 import { useAuth0 } from "@auth0/auth0-react";
-import { useMutation } from "react-query";
+import { useEffect, useState } from "react";
+import { useMutation, useQuery } from "react-query";
 import { toast } from "sonner";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -38,3 +39,42 @@ export const useCreateAdvertisement = () => {
     return { createAdvertisement, isLoading, isSuccess, error };
 };
 
+const fetchRandomAdvertisement = async (email) => {
+    console.log("email = ",email);
+    const response = await fetch(`${API_BASE_URL}/api/advertisements/random-advertisement?email=${email}`);
+    if (!response.ok) {
+        throw new Error("Failed to fetch advertisement.");
+    }
+    return response.json();
+};
+
+export const useFetchAdvertisement = () => {
+    const { user, isAuthenticated } = useAuth0();
+    const [showModal, setShowModal] = useState(false);
+
+    const { data, error, isLoading } = useQuery(
+        ["randomAdvertisement", user ? user.email : ''],
+        () => fetchRandomAdvertisement(user.email),
+        {
+            enabled: !!user,  // Only run the query if the user object is defined
+            onSuccess: () => {
+                // Delay showing the modal by 5 seconds
+                setTimeout(() => {
+                    setShowModal(true);
+                }, 3000);
+            }
+        }
+    );
+
+    useEffect(() => {
+        if (error) {
+            toast.error(`Error: ${error.message}`);
+        }
+    }, [error]);
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+    return { data, showModal, handleCloseModal, isLoading, error };
+};

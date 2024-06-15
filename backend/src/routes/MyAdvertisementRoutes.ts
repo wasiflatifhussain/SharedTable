@@ -29,4 +29,6 @@ router.post("/change-plan", jwtCheck, jwtParse, MyAdvertisementController.change
 
 router.get("/random-advertisement", MyAdvertisementController.getRandomAdvertisement);
 
+router.post("/renew-advertisements", jwtCheck, jwtParse, MyAdvertisementController.renewUserAdvertisements);
+
 export default router;

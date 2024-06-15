@@ -121,6 +121,47 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
         }
     }
 
+    else if (event.type === "checkout.session.completed" && event.data.object.metadata?.type === "advertisement-renewal") {
+        try {
+            const { adId } = event.data.object.metadata;
+
+            // Find the user advertisement containing the adId
+            const userAd = await UserAdvertisements.findOne({ "advertisements._id": adId }, { "advertisements.$": 1 });
+
+            if (!userAd || userAd.advertisements.length === 0) {
+                return res.status(404).json({ success: false, message: "Advertisement not found" });
+            }
+
+            const advertisement = userAd.advertisements[0];
+            let leftToDisplay = 0;
+
+            if (advertisement.plan === "20ads") {
+                leftToDisplay = 20;
+            } else if (advertisement.plan === "40ads") {
+                leftToDisplay = 40;
+            } else if (advertisement.plan === "60ads") {
+                leftToDisplay = 60;
+            } else {
+                return res.status(400).json({ success: false, message: "Invalid plan" });
+            }
+
+            // Update the advertisement's leftToDisplay field
+            advertisement.leftToDisplay = leftToDisplay;
+
+            // Save the updated advertisement back to the database
+            await UserAdvertisements.updateOne(
+                { _id: userAd._id, "advertisements._id": advertisement._id },
+                { $set: { "advertisements.$.leftToDisplay": leftToDisplay } }
+            );
+
+            return res.status(200).json({ success: true, message: "Advertisement renewed successfully" });
+
+        } catch (error) {
+            console.error("Failed to renew advertisement:", error);
+            return res.status(500).json({ success: false, message: "Failed to renew advertisement" });
+        }
+    }
+
     res.status(200).send();
 }
 

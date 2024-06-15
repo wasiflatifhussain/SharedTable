@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useCreateAdvertisement, useFetchAdvertisement } from "@/api/MyAdvertisementApi"; // Adjust the path as necessary
+import { useCreateAdvertisement, useFetchAdvertisement, useRenewAdvertisementPlan } from "@/api/MyAdvertisementApi"; // Adjust the path as necessary
 import "./AddAdvertisements.css";
 import { useAuth0 } from '@auth0/auth0-react';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -11,6 +11,7 @@ const AddAdvertisements = () => {
     const { data, showModal, handleCloseModal } = useFetchAdvertisement();
     const { getAccessTokenSilently, user, isAuthenticated } = useAuth0();
     const { createAdvertisement } = useCreateAdvertisement();
+    const { mutate: renewAdvertisement, isLoading, isSuccess, error } = useRenewAdvertisementPlan();
     const [image, setImage] = useState(null);
     const [imageFile, setImageFile] = useState(null);
     const [isUploading, setIsUploading] = useState(false);
@@ -85,6 +86,10 @@ const AddAdvertisements = () => {
     const handlePlanSelect = (selectedPlan: string) => {
         setPlan(selectedPlan);
     };
+
+    const handlePlanRenewal = (advertisementId: string) => {
+        renewAdvertisement(advertisementId);
+    }
 
     const initiateCheckout = () => {
         console.log("plan = ", plan);
@@ -396,6 +401,11 @@ const AddAdvertisements = () => {
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
                         </div>
+                        {displayed >= 15 &&
+                            <div className="flex justify-between mt-4">
+                                <button className="bg-blue-500 border border-blue-500 hover:bg-white hover:text-blue-500 text-white font-bold py-2 px-4 rounded-md" onClick={()=>handlePlanRenewal(advertisementId)}>Renew Plan Now</button>
+                            </div>     
+                        }
                         <div style={{display: "none"}} className='mt-2 p-4 border rounded-lg bg-gray-100 border-[#63c49c] text-gray-700' id={`${advertisementId}changeplan`}>
                             <button onClick={() => handleConfirmClick(advertisementId, "40ads")} className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md text-left">
                                 <p>Change Plan to 40 Ads per day</p>
@@ -425,6 +435,11 @@ const AddAdvertisements = () => {
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
                         </div>
+                        {displayed >= 35 &&
+                            <div className="flex justify-between mt-4">
+                                <button className="bg-blue-500 border border-blue-500 hover:bg-white hover:text-blue-500 text-white font-bold py-2 px-4 rounded-md" onClick={()=>handlePlanRenewal(advertisementId)}>Renew Plan Now</button>
+                            </div>     
+                        }
                         <div style={{display: "none"}} className='mt-2 p-4 border rounded-lg bg-gray-100 border-[#63c49c] text-gray-700' id={`${advertisementId}changeplan`}>
                             <button onClick={() => handleConfirmClick(advertisementId, "20ads")} className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md text-left">
                                 <p>Change Plan to 20 Ads per day</p>
@@ -454,6 +469,11 @@ const AddAdvertisements = () => {
                             <button className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md" onClick={()=>handleChangePlan(advertisementId)}>Change Plan</button>
                             <button onClick={() => handleConfirmCancelClick(advertisementId)} className="bg-red-500 border border-red-500 hover:bg-white hover:text-red-500 hover:border hover:border-red-500 text-white font-bold py-2 px-4 rounded-md">Cancel Plan</button>
                         </div>
+                        {displayed >= 55 &&
+                            <div className="flex justify-between mt-4">
+                                <button className="bg-blue-500 border border-blue-500 hover:bg-white hover:text-blue-500 text-white font-bold py-2 px-4 rounded-md" onClick={()=>handlePlanRenewal(advertisementId)}>Renew Plan Now</button>
+                            </div>     
+                        }
                         <div style={{display: "none"}} className='mt-2 p-4 border rounded-lg bg-gray-100 border-[#63c49c] text-gray-700' id={`${advertisementId}changeplan`}>
                             <button onClick={() => handleConfirmClick(advertisementId, "20ads")} className="bg-[#048a52] border border-[#048a52] hover:bg-white hover:text-[#048a52] text-white font-bold py-2 px-4 rounded-md text-left">
                                 <p>Change Plan to 20 Ads per day</p>

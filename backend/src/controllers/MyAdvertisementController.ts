@@ -36,57 +36,66 @@ const uploadImage = async (file: Express.Multer.File): Promise<string> => {
     return uploadResponse.url;
 }
 
-// const createAdvertisement = async (req: Request, res: Response): Promise<Response> => {
-//     try {
-//         const { email, phone, countryCode, name, plan } = req.body;
-//         const file = req.file as Express.Multer.File;
+const renewUserAdvertisements = async (req: Request, res: Response): Promise<Response> => {
+    console.log("found")
+    try {
+        const { adId } = req.body;
 
-//         // Upload image to Cloudinary
-//         const imageUrl = await uploadImage(file);
+        if (!adId) {
+            return res.status(400).json({ success: false, message: "adId is required" });
+        }
 
-//         // Find user by email
-//         const user = await User.findOne({ email });
-//         if (!user) {
-//             return res.status(404).json({ success: false, message: "User not found" });
-//         }
+        // Find the advertisement by adId
+        const userAd = await UserAdvertisements.findOne({ "advertisements._id": adId }, { "advertisements.$": 1 });
 
-//         const userId = user._id.toString();
-//         const phoneNumber = `${countryCode}${phone}`;
+        if (!userAd || userAd.advertisements.length === 0) {
+            return res.status(404).json({ success: false, message: "Advertisement not found" });
+        }
 
-//         // Check if user advertisement entry exists
-//         let userAdvertisement = await UserAdvertisements.findOne({ email, userId });
+        const advertisement = userAd.advertisements[0];
+        const plan = advertisement.plan;
+        console.log(plan)
 
-//         if (!userAdvertisement) {
-//             // Create new advertisement entry
-//             userAdvertisement = new UserAdvertisements({
-//                 userId,
-//                 email,
-//                 phoneNumber,
-//                 advertisements: [{
-//                     imageUrl,
-//                     plan,
-//                     uniqueId: new mongoose.Types.ObjectId().toString()
-//                 }]
-//             });
-//         } else {
-//             // Append new advertisement to existing entry
-//             userAdvertisement.advertisements.push({
-//                 imageUrl,
-//                 plan,
-//                 uniqueId: new mongoose.Types.ObjectId().toString()
-//             });
-//         }
+        let planPrice = 0;
+        if (plan === "20ads") {
+            planPrice = 400;
+        } else if (plan === "40ads") {
+            planPrice = 740;
+        } else if (plan === "60ads") {
+            planPrice = 1020;
+        } else {
+            return res.status(400).json({ success: false, message: "Invalid plan" });
+        }
 
-//         // Save the advertisement entry
-//         await userAdvertisement.save();
+        // Create a Stripe payment session
+        const session = await STRIPE.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [{
+                price_data: {
+                    currency: 'hkd',
+                    product_data: {
+                        name: `Advertisement Renewal`,
+                    },
+                    unit_amount: planPrice * 100,
+                },
+                quantity: 1,
+            }],
+            mode: 'payment',
+            success_url: `${FRONTEND_URL}/advertisements`,
+            cancel_url: `${FRONTEND_URL}/cancelled`,
+            metadata: {
+                adId,
+                uniqueId: new mongoose.Types.ObjectId().toString(),
+                type: 'advertisement-renewal',
+            },
+        });
 
-//         return res.status(201).json({ success: true, userAdvertisement });
-//     } catch (error) {
-//         console.error("Error creating advertisement:", error);
-//         return res.status(500).json({ success: false, message: "Something went wrong" });
-//     }
-// }
-
+        return res.status(200).json({ success: true, url: session.url });
+    } catch (error) {
+        console.error("Error renewing advertisement:", error);
+        return res.status(500).json({ success: false, message: "Something went wrong" });
+    }
+}
 
 const createAdvertisement = async (req: Request, res: Response): Promise<Response> => {
     try {
@@ -239,24 +248,6 @@ const changeAdvertisementPlan = async (req: Request, res: Response): Promise<Res
     }
 };
 
-// const getRandomAdvertisement = async (req: Request, res: Response) => {
-//     try {
-//         const advertisements = await UserAdvertisements.aggregate([
-//             { $unwind: "$advertisements" },
-//             { $sample: { size: 1 } } // Get a random advertisement
-//         ]);
-
-//         if (!advertisements || advertisements.length === 0) {
-//             return res.status(404).json({ success: false, message: "No advertisements found" });
-//         }
-
-//         return res.status(200).json({ success: true, advertisement: advertisements[0].advertisements });
-//     } catch (error) {
-//         console.error("Error fetching random advertisement:", error);
-//         return res.status(500).json({ success: false, message: "Something went wrong" });
-//     }
-// };
-
 const getRandomAdvertisement = async (req: Request, res: Response) => {
     const userEmail = req.query.email as string; // Assuming the user's email is passed as a query parameter
 
@@ -311,4 +302,5 @@ export default {
     deleteAdvertisement,
     changeAdvertisementPlan,
     getRandomAdvertisement,
+    renewUserAdvertisements,
 };

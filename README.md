@@ -22,6 +22,7 @@
     <p>f. Display advertisement as ad pop-up and allow users to cancel it</p>
     <p>g. Implemented a plan renewal system that automatically detects when number of times left for advertisement to be showed is less than 5 and prompts user to renew advertisement.</p>
 15. Currently implementing an image detection system to enable automatic food recognition for restaurants, simplifying menu entry processes. Link to the trained AI Model: https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
+16. Implemented the UI feature to allow users to directly take an image of the food and use the AI model to detect the type of food under the manage restaurant section. This will speed up the menu updating and improve efficiency.
 
 
 #### Samples of images of the interface:

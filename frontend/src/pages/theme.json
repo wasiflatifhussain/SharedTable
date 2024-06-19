@@ -1,0 +1,28 @@
+{
+    "color": {
+      "primary": "#4caf50",
+      "secondary": "#ff5722",
+      "background": "#ffffff",
+      "text": "#333333",
+      "header": "#4caf50",
+      "headerText": "#ffffff",
+      "messageSent": "#4caf50",
+      "messageReceived": "#eeeeee",
+      "messageText": "#000000"
+    },
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": "14px"
+    },
+    "borderRadius": "8px",
+    "spacing": {
+      "padding": "10px",
+      "margin": "10px"
+    },
+    "shadow": "0 1px 3px rgba(0, 0, 0, 0.2)",
+    "animations": {
+      "messageSent": "slideInRight",
+      "messageReceived": "slideInLeft"
+    }
+  }
+  

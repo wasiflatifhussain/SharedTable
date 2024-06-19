@@ -1,0 +1,69 @@
+Q: Hi
+A: Hey! Welcome to SharedTable. This is an innovative platform designed to streamline restaurant operations, enhance customer engagement, and promote food sustainability by minimizing food wastage.
+Q: Hey
+A: Hey! Welcome to SharedTable. This is an innovative platform designed to streamline restaurant operations, enhance customer engagement, and promote food sustainability by minimizing food wastage.
+Q: Hello
+A: Hey! Welcome to SharedTable. This is an innovative platform designed to streamline restaurant operations, enhance customer engagement, and promote food sustainability by minimizing food wastage.
+Q: What is SharedTable?
+A: SharedTable is an innovative platform designed to streamline restaurant operations, enhance customer engagement, and promote food sustainability by minimizing food wastage.
+Q: How does SharedTable help reduce food wastage?
+A: Restaurants can post their leftover foods on the platform, allowing people to get the food for free or at very low prices, thereby minimizing food waste.
+Q: How can I support my favorite restaurant on SharedTable?
+A: You can support restaurants by donating directly to them through the platform.
+Q: Which regions does SharedTable currently support?
+A: We currently only deliver in Hong Kong but we are rapidly expanding to ensure greater reach across other APAC countries.
+Q: How can I support SharedTable?
+A: Users can support SharedTable by donating to the platform, helping us to keep the service running: http://localhost:5173/donate-support . They can also post advertisements to both help benefit their publicity and support us at the same time: http://localhost:5173/advertisements 
+Q: Can I post advertisements on SharedTable?
+A: Yes, SharedTable allows businesses to post advertisements to generate additional revenue: http://localhost:5173/advertisements
+Q: How do I add an advertisement on SharedTable?
+A: You can add advertisements by creating a new ad through your account and paying for the post using Stripe payment: http://localhost:5173/advertisements
+Q: Can I manage my advertisements on SharedTable?
+A: Yes, you can manage advertisements by changing plans, canceling, and renewing them: http://localhost:5173/advertisements
+Q: How do I track my advertisement reach on SharedTable?
+A: You can keep track of how many times your advertisement appeared on people’s apps to learn about your advertisement reach: http://localhost:5173/advertisements
+Q: Does SharedTable display advertisements randomly?
+A: Yes, SharedTable uses a backend system to randomly choose an advertisement each time and display it to users.
+Q: How do advertisements appear on SharedTable?
+A: Advertisements are displayed as pop-ups, allowing users to close them if they wish: http://localhost:5173/advertisements
+Q: What happens when my advertisement display count is low?
+A: SharedTable prompts users to renew their advertisement plans when the number of times left for the advertisement to be shown is less than five.
+Q: What is the automatic food recognition feature on SharedTable?
+A: The automatic food recognition feature uses AI to detect food items, simplifying menu entry processes for restaurants. Go to the “Manage Restaurant” section under this link to check it out! http://localhost:5173/manage-restaurant 
+Q: How can I use the AI model for food detection?
+A: You can capture an image of the food directly, and the AI model will detect and update the type of food in the manage restaurant section. Go to the “Manage Restaurant” section under this link to check it out! http://localhost:5173/manage-restaurant
+Q: What technologies does SharedTable use for authentication?
+A: SharedTable uses Auth0 for secure user authentication. You can login via Google so we will never have any access to your data and your data is securely handled by Google themselves! Make an account using your google account now! Hit the sign up here! https://dev-i4y5qq0moxmlhae2.us.auth0.com/u/signup?state=hKFo2SBxa0RfTW52QU1lSzZEZEhscHR0em5TZmx0c3pZUFFVQqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHZQWEF1RldWZS1kMUpCLUVWa2ZMWXdIaktvRXhyR1VOo2NpZNkgQUV1c21EWlJ5aTAzT3NOTVk5Q1NtcTRvbnFLcHVNa1Q 
+Q: What database does SharedTable use for data storage?
+A: SharedTable uses MongoDB for robust data storage.
+Q: How does SharedTable handle user verification?
+A: SharedTable uses secure access tokens for user verification and state management.
+Q: How are images stored on SharedTable?
+A: Images are efficiently stored using Cloudinary.
+Q: How does SharedTable notify users?
+A: SharedTable uses interactive user toasts for notifications.
+Q: Can I deploy SharedTable easily?
+A: Yes, SharedTable is deployable on Render.com for easy deployment.
+Q: What library does SharedTable use for UI components?
+A: SharedTable uses ShadCN Library for consistent and reusable UI components.
+Q: How does SharedTable handle schema validation?
+A: SharedTable uses Zod for type-safe schema frameworks.
+Q: How are payments processed on SharedTable?
+A: Payments are processed seamlessly using Stripe.
+Q: How does SharedTable provide real-time updates?
+A: Real-time updates are provided using Stripe CLI webhooks.
+Q: What is the donations page on SharedTable?
+A: The donations page allows users to support restaurants and the website by donating through the platform.
+Q: How can I renew my advertisement plan on SharedTable?
+A: You can renew your advertisement plan when prompted or through the manage advertisements section. http://localhost:5173/advertisements
+Q: How do I capture food images for automatic detection?
+A: You can use the camera feature within the manage restaurant section to capture and upload images for automatic detection. Go to the “Manage Restaurant” section under this link to check it out! http://localhost:5173/manage-restaurant
+Q: Can I upload images directly to SharedTable?
+A: Yes, you can upload images directly using the upload image feature in the manage restaurant section. Go to the “Manage Restaurant” section under this link to check it out! http://localhost:5173/manage-restaurant
+Q: What is the main objective of SharedTable?
+A: The main objective is to encourage food sustainability and avoid wastage by allowing restaurants to post their leftover foods and enabling people to get food for free or at very low prices. Log In/Sign Up now: http://localhost:5173/ 
+Q: Can I donate to both restaurants and SharedTable?
+A: Yes, you can donate to both individual restaurants and the SharedTable platform. Donate here: http://localhost:5173/donate-support 
+Q: Is SharedTable free to use for restaurants and users?
+A: Yes, SharedTable is free to use, but restaurants and users can support the platform through donations and advertisements. You can donate here: http://localhost:5173/donate-support and advertise here: http://localhost:5173/advertisements
+

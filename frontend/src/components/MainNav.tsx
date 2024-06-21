@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "./ui/button";
 import UsernameMenu from "./UsernameMenu";
 import { Link } from "react-router-dom";
+import "./Nav.css"
 
 const MainNav = () => {
     const {loginWithRedirect, isAuthenticated} = useAuth0();
@@ -9,6 +10,9 @@ const MainNav = () => {
         <span className="flex space-x-2 items-center">
             {isAuthenticated? (
                 <>
+                    <Link to="/beta-test" className="font-bold hover:text-[#048a52] color-change" style={{marginRight: "20px"}}>
+                        Beta Release
+                    </Link>
                     <Link to="/advertisements" className="font-bold hover:text-[#048a52]" style={{marginRight: "20px"}}>
                         Add/Manage Advertisements
                     </Link>

@@ -5,3 +5,5 @@ scikit-learn
 tqdm
 matplotlib
 torchvision
+groq
+python-dotenv

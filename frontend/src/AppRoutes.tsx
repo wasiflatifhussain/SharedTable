@@ -14,6 +14,7 @@ import OrderStatusPage from "./pages/OrderStatusPage";
 import DonateSupportPage from "./pages/DonateSupportPage";
 import AddAdvertisements from "./pages/AddAdvertisements";
 import BetaTester from "./pages/BetaTester";
+import Stories from "./pages/Stories";
 
 const AppRoutes = () => {
     return (
@@ -24,6 +25,7 @@ const AppRoutes = () => {
             <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage /></Layout>} />
             <Route path="/donate-support" element={<Layout bgImage={background4}><DonateSupportPage /></Layout>}/>
             <Route path="/advertisements" element={<Layout bgImage={background4}><AddAdvertisements /></Layout>}/>
+            <Route path="/stories" element={<Layout bgImage={background4}><Stories /></Layout>}/>
             <Route path="/beta-test" element={<Layout bgImage={background4}><BetaTester /></Layout>}/>
             <Route element={<ProtectedRoute />}>
                 <Route path="/order-status" element={<Layout bgImage={background3}><OrderStatusPage /></Layout>}/>

@@ -1,0 +1,24 @@
+.story {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in-left 1.3s forwards;
+}
+
+.story.from-right {
+    transform: translateX(100%);
+    animation: slide-in-right 1s forwards;
+}
+
+@keyframes slide-in-left {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

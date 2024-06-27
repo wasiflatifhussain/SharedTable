@@ -3,7 +3,7 @@ import os
 from groq import Groq
 
 client = Groq(
-    api_key="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",
+    api_key="",
 )
 
 with open("story.txt", "r") as file:
@@ -54,7 +54,7 @@ elif "NOT" in chat_completion.choices[0].message.content:
 # from groq import Groq
 
 # # MongoDB client setup
-# clientM = MongoClient('mongodb+srv://wasiflh:AGhIrKgcQlJCeSFz@shared-table.payebkr.mongodb.net/?retryWrites=true&w=majority&appName=shared-table')
+# clientM = MongoClient('')
 # db = clientM['test']  # Replace 'your_database' with your actual database name
 
 # # Groq API client setup

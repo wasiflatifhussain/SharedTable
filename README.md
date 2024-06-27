@@ -35,7 +35,22 @@ Welcome to **SharedTable**, an innovative platform designed to streamline restau
 14. **Automatic Food Recognition**: AI-powered image detection system for automatic food recognition, simplifying menu entry processes.
     - https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
 15. **UI Integration**: Directly capture food images to detect and update menu items under the manage restaurant section, improving efficiency.
+16. **Inspiring Stories**: A section to share and read inspiring stories about sustainability to encourage and inspire more people to support the cause.
+    - Uses Llama-3 via Groq to ensure stories are appropriate and well-written.
+    - Removes vulgar or inappropriate stories without the need for human moderation.
+    - Rates stories out of 10 and sorts by rating
 
+## 🌟 Beta Tester
+
+We have introduced a Beta Tester section where we display all new features that are under beta testing. 
+
+### Current Beta Test
+
+- **AI Image Detection Model for Food Detection**: Our latest AI-powered image detection model for food recognition using DenseNet-201. This feature helps simplify menu entry processes by automatically recognizing food items from images.
+    - https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
+ <img width="1470" alt="Screenshot 2024-06-27 at 11 45 28 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/b278873e-efa3-489b-bc8d-2d8a01d92c5c">
+
+      
 ## 🥗 Main Objective
 
 Our web app is designed to encourage food sustainability and avoid wastage. Restaurants can post their leftover foods, allowing people to get the food for free or for very little money. Additionally, users can support restaurants and us by donating to either party. The platform also allows users to post advertisements, helping us keep the service running.
@@ -59,6 +74,11 @@ Our web app is designed to encourage food sustainability and avoid wastage. Rest
 ![Screenshot 15](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/ed6e5592-a519-455c-9181-f452540516d7)
 ![Screenshot 16](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/e7a13c42-f6b1-4b02-a0ae-4e7fca9a7b4e)
 ![Screenshot 17](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/1fad0b82-ca57-4270-b743-60622eaa7334)
+
+<img width="1470" alt="Screenshot 2024-06-27 at 11 42 42 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/10927bf8-3294-4c83-a8ea-0e588a9e6e83">
+<img width="1470" alt="Screenshot 2024-06-27 at 11 43 26 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/cb2b5fa9-21c2-40b1-855b-d0cced958d3b">
+<img width="1470" alt="Screenshot 2024-06-27 at 11 43 49 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/386495c6-9594-4d6e-95a2-a1b6197785a2">
+<img width="1470" alt="Screenshot 2024-06-27 at 11 44 14 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/680cc671-f70e-4d90-8d52-eb16949a9dd8">
 
 ---
 

@@ -48,7 +48,7 @@ We have introduced a Beta Tester section where we display all new features that 
 
 - **AI Image Detection Model for Food Detection**: Our latest AI-powered image detection model for food recognition using DenseNet-201. This feature helps simplify menu entry processes by automatically recognizing food items from images.
     - https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
- <img width="1470" alt="Screenshot 2024-06-27 at 11 45 28 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/b278873e-efa3-489b-bc8d-2d8a01d92c5c">
+ <img width="75%" alt="Screenshot 2024-06-27 at 11 45 28 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/b278873e-efa3-489b-bc8d-2d8a01d92c5c">
 
       
 ## 🥗 Main Objective

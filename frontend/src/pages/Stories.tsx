@@ -99,7 +99,7 @@ const Stories = () => {
                                 </div>
                                 <div style={{ width: "5%" }}></div>
                                 <div style={{ width: "35%" }}>
-                                    <img src={`data:image/jpeg;base64,${story.image}`} alt="Story" className="mt-4 w-full h-auto" />
+                                    <img src={`data:image/jpeg;base64,${story.image}`} alt="Story" className="mt-4 w-full" />
                                 </div>
                             </>
                         ) : (

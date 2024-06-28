@@ -59,7 +59,7 @@ elif "NOT" in chat_completion.choices[0].message.content:
 
 # # Groq API client setup
 # client = Groq(
-#     api_key="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",
+#     api_key="",
 # )
 
 # # Read input story from file

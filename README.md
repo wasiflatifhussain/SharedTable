@@ -34,7 +34,7 @@ Welcome to **SharedTable**, an innovative platform designed to streamline restau
     - Plan renewal prompts when advertisements are low on display count.
 14. **Automatic Food Recognition**: AI-powered image detection system for automatic food recognition, simplifying menu entry processes.
     - https://github.com/wasiflatifhussain/food-image-detection-model-139-classes
-15. **UI Integration**: Directly capture food images to detect and update menu items under the manage restaurant section, improving efficiency.
+15. **AI Integration**: Directly capture food images to detect and update menu items under the manage restaurant section, improving efficiency.
 16. **Inspiring Stories**: A section to share and read inspiring stories about sustainability to encourage and inspire more people to support the cause.
     - Uses Llama-3 via Groq to ensure stories are appropriate and well-written.
     - Removes vulgar or inappropriate stories without the need for human moderation.

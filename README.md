@@ -57,28 +57,29 @@ Our web app is designed to encourage food sustainability and avoid wastage. Rest
 
 ## 📸 Samples of the Interface
 
-![Screenshot 1](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/c7d67291-d462-4a58-bcd3-54860be0b65e)
-![Screenshot 2](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/58d77816-a65d-4175-9fb4-8483b6d33521)
-![Screenshot 3](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/f8d1fbb6-23f7-4d69-a052-7975b9ac70c8)
-![Screenshot 4](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/721c83c8-cd85-4f65-bc9d-f790c8930b67)
-![Screenshot 5](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/5428e8f7-2eb9-4659-827a-24bda49799ea)
-![Screenshot 6](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/4b99d14c-143f-4463-9e56-ae4f6260e694)
-![Screenshot 7](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/62cdab53-4e18-413b-8d00-380d55a193a0)
-![Screenshot 8](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/b5852b5e-0135-4c8b-b4db-43805516a428)
-![Screenshot 9](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/fd1a3ee3-a900-4a46-9a7b-3a247ab2a903)
-![Screenshot 10](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/5593d7b0-747a-4b9c-b656-2f81c71bbec8)
-![Screenshot 11](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/cb750a33-599b-4090-8ba3-b35f36ebabb5)
-![Screenshot 12](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/e8157886-1649-4cef-842f-77c63afa454f)
-![Screenshot 13](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/1974eca3-f54f-413a-b7c1-2e301cfd4051)
-![Screenshot 14](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/c116ea4b-9c9c-41cf-8f20-9b14c1301658)
-![Screenshot 15](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/ed6e5592-a519-455c-9181-f452540516d7)
-![Screenshot 16](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/e7a13c42-f6b1-4b02-a0ae-4e7fca9a7b4e)
-![Screenshot 17](https://github.com/wasiflatifhussain/SharedTable/assets/86021138/1fad0b82-ca57-4270-b743-60622eaa7334)
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/c7d67291-d462-4a58-bcd3-54860be0b65e" alt="Screenshot 1">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/58d77816-a65d-4175-9fb4-8483b6d33521" alt="Screenshot 2">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/f8d1fbb6-23f7-4d69-a052-7975b9ac70c8" alt="Screenshot 3">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/721c83c8-cd85-4f65-bc9d-f790c8930b67" alt="Screenshot 4">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/5428e8f7-2eb9-4659-827a-24bda49799ea" alt="Screenshot 5">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/4b99d14c-143f-4463-9e56-ae4f6260e694" alt="Screenshot 6">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/62cdab53-4e18-413b-8d00-380d55a193a0" alt="Screenshot 7">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/b5852b5e-0135-4c8b-b4db-43805516a428" alt="Screenshot 8">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/fd1a3ee3-a900-4a46-9a7b-3a247ab2a903" alt="Screenshot 9">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/5593d7b0-747a-4b9c-b656-2f81c71bbec8" alt="Screenshot 10">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/cb750a33-599b-4090-8ba3-b35f36ebabb5" alt="Screenshot 11">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/e8157886-1649-4cef-842f-77c63afa454f" alt="Screenshot 12">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/1974eca3-f54f-413a-b7c1-2e301cfd4051" alt="Screenshot 13">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/c116ea4b-9c9c-41cf-8f20-9b14c1301658" alt="Screenshot 14">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/ed6e5592-a519-455c-9181-f452540516d7" alt="Screenshot 15">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/e7a13c42-f6b1-4b02-a0ae-4e7fca9a7b4e" alt="Screenshot 16">
+<img src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/1fad0b82-ca57-4270-b743-60622eaa7334" alt="Screenshot 17">
 
-<img width="1470" alt="Screenshot 2024-06-27 at 11 42 42 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/10927bf8-3294-4c83-a8ea-0e588a9e6e83">
-<img width="1470" alt="Screenshot 2024-06-27 at 11 43 26 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/cb2b5fa9-21c2-40b1-855b-d0cced958d3b">
-<img width="1470" alt="Screenshot 2024-06-27 at 11 43 49 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/386495c6-9594-4d6e-95a2-a1b6197785a2">
-<img width="1470" alt="Screenshot 2024-06-27 at 11 44 14 PM" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/680cc671-f70e-4d90-8d52-eb16949a9dd8">
+<img width="1470" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/10927bf8-3294-4c83-a8ea-0e588a9e6e83" alt="Screenshot 2024-06-27 at 11:42:42 PM">
+<img width="1470" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/cb2b5fa9-21c2-40b1-855b-d0cced958d3b" alt="Screenshot 2024-06-27 at 11:43:26 PM">
+<img width="1470" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/386495c6-9594-4d6e-95a2-a1b6197785a2" alt="Screenshot 2024-06-27 at 11:43:49 PM">
+<img width="1470" src="https://github.com/wasiflatifhussain/SharedTable/assets/86021138/680cc671-f70e-4d90-8d52-eb16949a9dd8" alt="Screenshot 2024-06-27 at 11:44:14 PM">
+
 
 ---
 
